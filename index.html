@@ -7,18 +7,19 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <nav id="navbar">
-    <div class="nav-logo">DP</div>
+    <div class="nav-logo"><a href="index.html">DP</a></div>
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#tools">Tools</a></li>
-      <li><a href="#connect">Connect</a></li>
+      <li><a href="#contact">Contact</a></li>
       <li><a href="positions.html">Positions</a></li>
       <li><a href="awards.html">Awards</a></li>
       <li><a href="students.html">Students</a></li>
@@ -29,135 +30,116 @@
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">✕</button>
     <ul>
       <li><a href="#home" onclick="closeMobile()">Home</a></li>
       <li><a href="#about" onclick="closeMobile()">About</a></li>
       <li><a href="#research" onclick="closeMobile()">Research</a></li>
       <li><a href="#publications" onclick="closeMobile()">Publications</a></li>
       <li><a href="#tools" onclick="closeMobile()">Tools</a></li>
-      <li><a href="#connect" onclick="closeMobile()">Connect</a></li>
+      <li><a href="#contact" onclick="closeMobile()">Contact</a></li>
       <li><a href="positions.html" onclick="closeMobile()">Positions</a></li>
       <li><a href="awards.html" onclick="closeMobile()">Awards</a></li>
       <li><a href="students.html" onclick="closeMobile()">Students</a></li>
     </ul>
   </div>
 
+  
   <section id="home" class="hero">
-    <div class="hero-bg-text">BIOINFORMATICS</div>
-    <div class="hero-content">
-      <h1 class="hero-name"><em>Dr. Deeksha Pandey</em></h1>
-      <div class="hero-badge">Assistant Professor (Grade-I) · Jaypee Institute of Information Technology</div>
-      <p class="hero-tagline">Computational Biology &amp; Bioinformatics · Antimicrobial Resistance · Machine Learning</p>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-num">13+</span>
-          <span class="stat-label">Publications</span>
+    <div class="hero-bg">
+      <img src="backgroung.png" alt="" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <span class="hero-tag">Assistant Professor (Grade-I) · JIIT Noida</span>
+        <h1>Dr. Deeksha<br><em>Pandey</em></h1>
+        <p class="hero-sub">Computational Biology &amp; Bioinformatics · Antimicrobial Resistance · Machine Learning</p>
+        <div class="hero-stats">
+          <div class="hstat"><span class="hstat-n" data-target="13">0</span><span class="hstat-plus">+</span><small>Publications</small></div>
+          <div class="hstat"><span class="hstat-n" data-target="87">0</span><span class="hstat-plus">+</span><small>Citations</small></div>
+          <div class="hstat"><span class="hstat-n" data-target="9">0</span><span class="hstat-plus">+</span><small>Years Research</small></div>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">87+</span>
-          <span class="stat-label">Citations</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">9+</span>
-          <span class="stat-label">Years Research</span>
+        <div class="hero-btns">
+          <a href="#research" class="btn-solid">Explore Research</a>
+          <a href="CV_Deeksha_Pandey.pdf" target="_blank" class="btn-ghost">Download CV</a>
         </div>
       </div>
-      <div class="hero-cta">
-        <a href="#research" class="btn-primary">Explore Research</a>
-        <a href="CV_Deeksha_Pandey.pdf" target="_blank" class="btn-outline">Download CV</a>
-        <a href="#connect" class="btn-outline">Get in Touch</a>
+      <div class="hero-right">
+        <div class="hero-photo-wrap">
+          <img src="profile.jpeg" alt="Dr. Deeksha Pandey" class="hero-photo" />
+          <div class="hero-photo-badge">Assistant Professor at Jaypee Institute Of Information Technology</div>
+        </div>
       </div>
     </div>
-    <div class="scroll-indicator">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
+    <div class="hero-scroll"><span></span></div>
   </section>
 
-  <section id="about" class="about">
-    <div class="section-label">01 · About</div>
-    <div class="about-grid">
-      <div class="about-photo-col">
-        <div class="photo-frame">
-          <div class="photo-placeholder">
-            <img src="profile.jpeg" alt="Dr. Deeksha Pandey" style="width:100%; border-radius:4px;" />
-            <p>Dr. Deeksha Pandey</p>
-          </div>
-          <div class="photo-badge">Ph.D. · 2023</div>
-        </div>
-        <div class="affiliation-card">
-          <div class="aff-icon">🧬</div>
-          <div>
-            <strong>Translational Bioinformatics Group</strong>
-            <p>International Centre for Genetic Engineering and Biotechnology (ICGEB), New Delhi</p>
-          </div>
-        </div>
+  
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="sec-num">01</span>
+        <h2 class="sec-title">About <em>Me</em></h2>
       </div>
-      <div class="about-text-col">
-        <h2 class="section-title">Decoding Resistance,<br/><em>One Genome at a Time</em></h2>
-        <p class="about-lead">I am a computational biologist with over 9 years of research experience focused on understanding and combating antimicrobial resistance (AMR) through cutting-edge bioinformatics and machine learning approaches.</p>
-        <p class="about-body">I completed my Ph.D. in Computational Biology and Bioinformatics from the University of Delhi South Campus in March 2023 (Degree Awarded: 24 February 2024), under the supervision of <strong>Prof. Manish Kumar</strong> at the Bioinformatics &amp; AI Lab. My doctoral work centred on the characterization and analysis of antimicrobial resistance using <em>in-silico</em> tools.</p>
-        <p class="about-body">I am an active member of the <strong>Asia-Pacific Bioinformatics Network (APBioNET)</strong>, <strong>BIOCLUES</strong>, <strong>BIDDS</strong>, and <strong>ESCMID</strong>. I serve as a <strong>Steering Committee Member at InCoB 2025</strong> and as <strong>Editorial Board Member of BMC Microbiology (2025–Present)</strong>.</p>
-        <div class="awards">
-          <div class="award-item">
-            <div class="award-icon">🏆</div>
-            <div>
-              <strong>AWSAR National Award (3rd Prize) — 2022</strong>
-              <p>DST, Govt. of India — "Computers and artificial intelligence as weapons against antimicrobial resistance"</p>
-            </div>
-          </div>
-          <div class="award-item">
-            <div class="award-icon">🌍</div>
-            <div>
-              <strong>ECCMID Outreach Grant — 2022</strong>
-              <p>Bill &amp; Melinda Gates Foundation — 32nd European Congress of Clinical Microbiology, Lisbon, Portugal</p>
-            </div>
-          </div>
-          <div class="award-item">
-            <div class="award-icon">🥇</div>
-            <div>
-              <strong>Gold Medal — M.Tech Bioinformatics · 2015</strong>
-              <p>1st Position, Banasthali Vidyapeeth, Jaipur</p>
-            </div>
-          </div>
-          <div class="award-item">
-            <div class="award-icon">🎖️</div>
-            <div>
-              <strong>DST INSPIRE Fellowship (JRF &amp; SRF)</strong>
-              <p>Department of Science &amp; Technology, Govt. of India · 2016–2018</p>
-            </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="about-lead">I am a computational biologist with over <strong>9 years of research experience</strong> focused on understanding and combating antimicrobial resistance (AMR) through bioinformatics and machine learning.</p>
+          <p>I completed my Ph.D. from the <strong>University of Delhi South Campus</strong> (Awarded: February 2024) under Prof. Manish Kumar at the Bioinformatics &amp; AI Lab. My doctoral work focused on characterization and analysis of antimicrobial resistance using <em>in-silico</em> tools.</p>
+          <p>Currently serving as <strong>Assistant Professor (Grade-I)</strong> at the Department of Biotechnology, Jaypee Institute of Information Technology, Noida. Previously, I was a Project Scientist-I at the Translational Bioinformatics Group, <strong>ICGEB, New Delhi</strong>, and a Research Associate at the <strong>Cancer Science Institute, NUS Singapore</strong>.</p>
+          <p>I serve as <strong>Editorial Board Member, BMC Microbiology (2025–Present)</strong> and <strong>Steering Committee Member, InCoB 2025</strong>.</p>
+          <div class="about-tags">
+            <span>APBioNET Member</span>
+            <span>ESCMID Member</span>
+            <span>ASM Global Outreach</span>
+            <span>BIDDS Member</span>
+            <span>BIOCLUES Member</span>
           </div>
         </div>
-        <div class="edu-timeline">
-          <h3>Education</h3>
-          <div class="timeline-item">
-            <div class="tl-dot"></div>
-            <div>
-              <strong>Ph.D. — Computational Biology &amp; Bioinformatics</strong>
-              <span>University of Delhi South Campus · 2016–2023 (Awarded Feb 2024)</span>
+        <div class="about-sidebar">
+          <div class="edu-card">
+            <h3>Education</h3>
+            <div class="edu-item">
+              <div class="edu-dot"></div>
+              <div>
+                <strong>Ph.D. — Computational Biology</strong>
+                <span>University of Delhi South Campus · 2016–2023</span>
+              </div>
+            </div>
+            <div class="edu-item">
+              <div class="edu-dot"></div>
+              <div>
+                <strong>M.Tech — Bioinformatics <em>(Gold Medalist)</em></strong>
+                <span>Banasthali Vidyapeeth · 2013–2015</span>
+              </div>
+            </div>
+            <div class="edu-item">
+              <div class="edu-dot"></div>
+              <div>
+                <strong>PG Diploma — Bioinformatics</strong>
+                <span>Banasthali Vidyapeeth · 2012–2013</span>
+              </div>
+            </div>
+            <div class="edu-item">
+              <div class="edu-dot"></div>
+              <div>
+                <strong>B.Sc. — Biotechnology</strong>
+                <span>C.S.J.M. University, Kanpur · 2009–2012</span>
+              </div>
             </div>
           </div>
-          <div class="timeline-item">
-            <div class="tl-dot"></div>
+          <div class="affil-card">
+            <div class="affil-icon">🧬</div>
             <div>
-              <strong>M.Tech — Bioinformatics (Gold Medalist)</strong>
-              <span>Banasthali Vidyapeeth, Jaipur · 2013–2015</span>
+              <strong>Current Position</strong>
+              <p>Dept. of Biotechnology, JIIT Noida</p>
             </div>
           </div>
-          <div class="timeline-item">
-            <div class="tl-dot"></div>
+          <div class="affil-card">
+            <div class="affil-icon">🔬</div>
             <div>
-              <strong>PG Diploma — Bioinformatics</strong>
-              <span>Banasthali Vidyapeeth, Jaipur · 2012–2013</span>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="tl-dot"></div>
-            <div>
-              <strong>B.Sc. — Biotechnology</strong>
-              <span>Dayanand Girls P.G. College, C.S.J.M. University, Kanpur · 2009–2012</span>
+              <strong>Previous</strong>
+              <p>Translational Bioinformatics Group, ICGEB New Delhi</p>
             </div>
           </div>
         </div>
@@ -165,222 +147,235 @@
     </div>
   </section>
 
-  <section id="research" class="research">
-    <div class="section-label">02 · Research Focus</div>
-    <h2 class="section-title centered">Research <em>Focus</em></h2>
-    <p class="section-subtitle">My work bridges computational methods with pressing challenges in infectious disease biology</p>
-    <div class="research-grid">
-      <div class="research-card" data-delay="0">
-        <div class="rc-icon">🦠</div>
-        <h3>Antimicrobial Resistance</h3>
-        <p>Studying the evolution, spread, and molecular mechanisms of antibiotic resistance genes (ARGs) in ESKAPE pathogens and metagenomic datasets. Investigating OXA, AmpC, and other β-lactamases.</p>
-        <div class="rc-tag">AMR · ESKAPE · β-lactamases</div>
+  
+  <section id="research" class="section research-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="sec-num">02</span>
+        <h2 class="sec-title">Research <em>Focus</em></h2>
+        <p class="sec-sub">My work bridges computational methods with pressing challenges in infectious disease biology</p>
       </div>
-      <div class="research-card" data-delay="100">
-        <div class="rc-icon">🤖</div>
-        <h3>Machine Learning in Biology</h3>
-        <p>Developing ML-based computational tools for the identification, prediction, and characterization of antimicrobial-resistant proteins and genes in -omics datasets. Tools: BacEffluxPred, β-LacFamPred.</p>
-        <div class="rc-tag">ML · SVM · HMM · Genomics</div>
-      </div>
-      <div class="research-card" data-delay="200">
-        <div class="rc-icon">🔬</div>
-        <h3>Structural Bioinformatics</h3>
-        <p>Molecular dynamics simulations and docking studies to investigate structural impacts of mutations — including DRD2 receptor (S311C mutation) and HIV-host protein interactions.</p>
-        <div class="rc-tag">MD Simulation · Drug Design · CADD</div>
-      </div>
-      <div class="research-card" data-delay="300">
-        <div class="rc-icon">🧫</div>
-        <h3>Metagenomics &amp; Surveillance</h3>
-        <p>NGS-based metagenomic analysis for surveillance of antibiotic resistance gene diversity across clinical, environmental, and animal reservoirs using tools like BacARscan.</p>
-        <div class="rc-tag">NGS · WGS · Metagenomics</div>
-      </div>
-      <div class="research-card" data-delay="400">
-        <div class="rc-icon">💊</div>
-        <h3>Drug Repurposing</h3>
-        <p>Investigating antiviral compounds like Remdesivir, Zidovudine, and Nevirapine against Chandipura virus through high-energy interaction analysis of the RdRp domain.</p>
-        <div class="rc-tag">Antivirals · RdRp · Docking</div>
-      </div>
-      <div class="research-card" data-delay="500">
-        <div class="rc-icon">🎗️</div>
-        <h3>Cancer Biology</h3>
-        <p>Investigated mutational landscape of microsatellite unstable cancers at Cancer Science Institute, NUS Singapore. Analyzing mutational signatures at microsatellite repeats in healthy-derived cells.</p>
-        <div class="rc-tag">MSI · Cancer · Mutational Signature</div>
+      <div class="research-grid">
+        <div class="rcard">
+          <div class="rcard-icon">🦠</div>
+          <h3>Antimicrobial Resistance</h3>
+          <p>Evolution, spread, and molecular mechanisms of antibiotic resistance genes (ARGs) in ESKAPE pathogens. Investigating OXA, AmpC, and β-lactamases.</p>
+          <div class="rcard-tags"><span>AMR</span><span>ESKAPE</span><span>β-lactamases</span></div>
+        </div>
+        <div class="rcard">
+          <div class="rcard-icon">🤖</div>
+          <h3>Machine Learning in Biology</h3>
+          <p>ML-based tools for identification and characterization of AMR proteins and genes in -omics datasets. Built BacEffluxPred, β-LacFamPred.</p>
+          <div class="rcard-tags"><span>ML</span><span>SVM</span><span>HMM</span></div>
+        </div>
+        <div class="rcard">
+          <div class="rcard-icon">🔬</div>
+          <h3>Structural Bioinformatics</h3>
+          <p>Molecular dynamics simulations and docking to investigate structural impacts of mutations — DRD2 receptor, HIV-host protein interactions.</p>
+          <div class="rcard-tags"><span>MD Simulation</span><span>Docking</span><span>CADD</span></div>
+        </div>
+        <div class="rcard">
+          <div class="rcard-icon">🧫</div>
+          <h3>Metagenomics &amp; Surveillance</h3>
+          <p>NGS-based metagenomic analysis for surveillance of ARG diversity across clinical, environmental, and animal reservoirs using BacARscan.</p>
+          <div class="rcard-tags"><span>NGS</span><span>WGS</span><span>Metagenomics</span></div>
+        </div>
+        <div class="rcard">
+          <div class="rcard-icon">💊</div>
+          <h3>Drug Repurposing</h3>
+          <p>Investigating antiviral compounds against Chandipura virus via high-energy interaction analysis of the RdRp domain of polymerase protein L.</p>
+          <div class="rcard-tags"><span>Antivirals</span><span>RdRp</span><span>Docking</span></div>
+        </div>
+        <div class="rcard">
+          <div class="rcard-icon">🎗️</div>
+          <h3>Cancer Biology</h3>
+          <p>Mutational landscape of microsatellite unstable cancers at Cancer Science Institute, NUS Singapore. Mutational signatures at microsatellite repeats.</p>
+          <div class="rcard-tags"><span>MSI</span><span>Cancer</span><span>Mutation</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="publications" class="publications">
-    <div class="section-label">03 · Publications</div>
-    <h2 class="section-title centered">Selected <em>Publications</em></h2>
-    <p class="section-subtitle">Cumulative Impact Factor: 46.008 · First Author Papers: 05 · Peer-reviewed journals, protocols &amp; preprints</p>
-    <div class="pub-list">
-      <div class="pub-item">
-        <div class="pub-year">2025</div>
-        <div class="pub-content">
-          <h4>AmpC β-lactamases: A Key to Antibiotic Resistance in ESKAPE Pathogens</h4>
-          <p class="pub-authors">Pandey D, Gupta I, Gupta D</p>
-          <p class="pub-journal">bioRxiv (Preprint) · doi: 10.1101/2025.03.05.641667</p>
-          <div class="pub-tags"><span>AMR</span><span>ESKAPE</span><span>β-lactamase</span><span>Preprint</span></div>
+  
+  <section id="publications" class="section pub-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="sec-num">03</span>
+        <h2 class="sec-title">Selected <em>Publications</em></h2>
+        <p class="sec-sub">Cumulative Impact Factor: 46.008 · First Author Papers: 05</p>
+      </div>
+      <div class="pub-list">
+        <div class="pub-item">
+          <div class="pub-meta"><span class="pub-year">2025</span></div>
+          <div class="pub-body">
+            <h4>AmpC β-lactamases: A Key to Antibiotic Resistance in ESKAPE Pathogens</h4>
+            <p class="pub-authors">Pandey D, Gupta I, Gupta D</p>
+            <p class="pub-journal">bioRxiv (Preprint) · doi: 10.1101/2025.03.05.641667</p>
+            <div class="pub-chips"><span>AMR</span><span>ESKAPE</span><span>Preprint</span></div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-meta"><span class="pub-year">2024</span></div>
+          <div class="pub-body">
+            <h4>NRTIs and NNRTIs capable of binding Chandipura virus polymerase protein (L) and inhibiting virus replication</h4>
+            <p class="pub-authors">Mandal D, Pandey D, Sarkar DP, Kumar M</p>
+            <p class="pub-journal">VirusDisease · PMID: 39464733 · IF: 1.848</p>
+            <div class="pub-chips"><span>Chandipura</span><span>Antiviral</span></div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-meta"><span class="pub-year">2022</span></div>
+          <div class="pub-body">
+            <h4>β-LacFamPred: An online tool for prediction and classification of β-lactamase class, subclass, and family</h4>
+            <p class="pub-authors">Pandey D, Singhal N, Kumar M</p>
+            <p class="pub-journal">Frontiers in Microbiology · PMID: 36713195 · IF: 6.064</p>
+            <div class="pub-chips"><span>β-lactamase</span><span>ML Tool</span></div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-meta"><span class="pub-year">2022</span></div>
+          <div class="pub-body">
+            <h4>BacARscan: An in silico resource to discern diversity in antibiotic resistance genes</h4>
+            <p class="pub-authors">Pandey D, Kumari B, Singhal N, Kumar M</p>
+            <p class="pub-journal">Biology Methods and Protocols · PMID: 36479434 · IF: 3.6</p>
+            <div class="pub-chips"><span>ARGs</span><span>Metagenomics</span></div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-meta"><span class="pub-year">2021</span></div>
+          <div class="pub-body">
+            <h4>Investigating the OXA Variants of ESKAPE Pathogens</h4>
+            <p class="pub-authors">Pandey D, Singhal N, Kumar M</p>
+            <p class="pub-journal">Antibiotics · 10(12):1539 · PMID: 34943751 · IF: 4.9</p>
+            <div class="pub-chips"><span>OXA</span><span>ESKAPE</span></div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-meta"><span class="pub-year">2020</span></div>
+          <div class="pub-body">
+            <h4>BacEffluxPred: A two-tier system to predict and categorize bacterial efflux mediated antibiotic resistance proteins</h4>
+            <p class="pub-authors">Pandey D, Kumari B, Singhal N, Kumar M</p>
+            <p class="pub-journal">Scientific Reports · PMID: 32518231 · IF: 4.6</p>
+            <div class="pub-chips"><span>Efflux Pump</span><span>ML</span></div>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-meta"><span class="pub-year">2016</span></div>
+          <div class="pub-body">
+            <h4>CD4-gp120 Interaction Interface — A Gateway For HIV-1 Infection: Molecular Network, Modeling and Docking Studies</h4>
+            <p class="pub-authors">Pandey D, Podder A, Pandit M, Latha N</p>
+            <p class="pub-journal">J. Biomolecular Structure and Dynamics · PMID: 27545652 · IF: 5.235</p>
+            <div class="pub-chips"><span>HIV</span><span>Docking</span></div>
+          </div>
         </div>
       </div>
-      <div class="pub-item">
-        <div class="pub-year">2024</div>
-        <div class="pub-content">
-          <h4>Nucleoside and non-nucleoside reverse transcriptase inhibitor drugs capable of binding Chandipura virus polymerase protein (L) and inhibiting virus replication</h4>
-          <p class="pub-authors">Mandal D, Pandey D, Sarkar DP, Kumar M</p>
-          <p class="pub-journal">VirusDisease · 2024 · PMID: 39464733 · IF: 1.848</p>
-          <div class="pub-tags"><span>Chandipura</span><span>Antiviral</span><span>NRTIs</span></div>
-        </div>
+      <div class="pub-cta">
+        <a href="https://scholar.google.co.in/citations?hl=en&user=V13V4i8AAAAJ&view_op=list_works&sortby=pubdate" target="_blank" class="btn-solid">View All on Google Scholar</a>
+        <a href="https://www.researchgate.net/profile/Deeksha_Pandey4" target="_blank" class="btn-ghost">ResearchGate</a>
       </div>
-      <div class="pub-item">
-        <div class="pub-year">2022</div>
-        <div class="pub-content">
-          <h4>β-LacFamPred: An online tool for prediction and classification of β-lactamase class, subclass, and family</h4>
-          <p class="pub-authors">Pandey D, Singhal N, Kumar M</p>
-          <p class="pub-journal">Frontiers in Microbiology · 2022 · PMID: 36713195 · IF: 6.064</p>
-          <div class="pub-tags"><span>β-lactamase</span><span>ML Tool</span><span>Classification</span></div>
-        </div>
-      </div>
-      <div class="pub-item">
-        <div class="pub-year">2022</div>
-        <div class="pub-content">
-          <h4>BacARscan: An in silico resource to discern diversity in antibiotic resistance genes</h4>
-          <p class="pub-authors">Pandey D, Kumari B, Singhal N, Kumar M</p>
-          <p class="pub-journal">Biology Methods and Protocols · 2022 · PMID: 36479434 · IF: 3.6</p>
-          <div class="pub-tags"><span>ARGs</span><span>Metagenomics</span><span>Webserver</span></div>
-        </div>
-      </div>
-      <div class="pub-item">
-        <div class="pub-year">2021</div>
-        <div class="pub-content">
-          <h4>Investigating the OXA Variants of ESKAPE Pathogens</h4>
-          <p class="pub-authors">Pandey D, Singhal N, Kumar M</p>
-          <p class="pub-journal">Antibiotics (Basel) · 2021 · 10(12):1539 · PMID: 34943751 · IF: 4.9</p>
-          <div class="pub-tags"><span>OXA</span><span>ESKAPE</span><span>Nosocomial</span></div>
-        </div>
-      </div>
-      <div class="pub-item">
-        <div class="pub-year">2020</div>
-        <div class="pub-content">
-          <h4>BacEffluxPred: A two-tier system to predict and categorize bacterial efflux mediated antibiotic resistance proteins</h4>
-          <p class="pub-authors">Pandey D, Kumari B, Singhal N, Kumar M</p>
-          <p class="pub-journal">Scientific Reports · 2020 · PMID: 32518231 · IF: 4.6</p>
-          <div class="pub-tags"><span>Efflux Pump</span><span>ML Predictor</span><span>AMR</span></div>
-        </div>
-      </div>
-      <div class="pub-item">
-        <div class="pub-year">2016</div>
-        <div class="pub-content">
-          <h4>CD4-gp120 Interaction Interface — A Gateway For HIV-1 Infection in Human: Molecular Network, Modeling and Docking Studies</h4>
-          <p class="pub-authors">Pandey D, Podder A, Pandit M, Latha N</p>
-          <p class="pub-journal">Journal of Biomolecular Structure and Dynamics · 2016 · PMID: 27545652 · IF: 5.235</p>
-          <div class="pub-tags"><span>HIV</span><span>Molecular Docking</span><span>Network</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="pub-cta">
-      <a href="https://scholar.google.co.in/citations?hl=en&user=V13V4i8AAAAJ&view_op=list_works&sortby=pubdate" target="_blank" class="btn-primary">View All on Google Scholar</a>
-      <a href="https://www.researchgate.net/profile/Deeksha_Pandey4" target="_blank" class="btn-outline">ResearchGate Profile</a>
-    </div>
-  </section>
-
-  <section id="tools" class="tools-section">
-    <div class="section-label">04 · Tools &amp; Resources</div>
-    <h2 class="section-title centered">Developed Tools &amp; <em>Webservers</em></h2>
-    <div class="tools-grid">
-      <a href="http://proteininformatics.org/mkumar/bacarscan/" target="_blank" class="tool-card">
-        <div class="tool-icon">🔍</div>
-        <h3>BacARscan</h3>
-        <p>An in-silico resource to discern diversity in antibiotic resistance genes across metagenomic and genomic datasets.</p>
-        <div class="tool-meta"><span class="tool-type">Webserver · Database</span></div>
-      </a>
-      <a href="http://www.proteininformatics.org/mkumar/baceffluxpred/" target="_blank" class="tool-card">
-        <div class="tool-icon">🧬</div>
-        <h3>BacEffluxPred</h3>
-        <p>In-silico two-tier prediction system for bacterial efflux conferring antibiotic resistance proteins and their subfamilies.</p>
-        <div class="tool-meta"><span class="tool-type">ML Predictor · Two-tier</span></div>
-      </a>
-      <a href="http://proteininformatics.org/mkumar/blacfampred/" target="_blank" class="tool-card">
-        <div class="tool-icon">🧪</div>
-        <h3>β-LacFamPred</h3>
-        <p>HMM-based prediction and annotation tool for β-lactamase families — classifies class, subclass, and family.</p>
-        <div class="tool-meta"><span class="tool-type">HMM · Classifier</span></div>
-      </a>
     </div>
   </section>
 
-  <section id="connect" class="connect">
-    <div class="section-label">05 · Connect</div>
-    <h2 class="section-title centered">Find Me <em>Online</em></h2>
-    <p class="section-subtitle">Connect, collaborate, and explore my work across platforms</p>
-    <div class="connect-grid">
-      <a href="https://www.researchgate.net/profile/Deeksha_Pandey4" target="_blank" class="connect-card rg">
-        <div class="cc-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.586 0H4.414C1.978 0 0 1.978 0 4.414v15.172C0 22.022 1.978 24 4.414 24h15.172C22.022 24 24 22.022 24 19.586V4.414C24 1.978 22.022 0 19.586 0zM10.5 16.5h-2.25v-6H10.5v6zm-1.125-6.75a1.125 1.125 0 110-2.25 1.125 1.125 0 010 2.25zm9.375 6.75h-2.25v-3c0-.825-.675-1.5-1.5-1.5s-1.5.675-1.5 1.5v3h-2.25v-6h2.25v.907A3.356 3.356 0 0116.5 10.5c1.657 0 2.25 1.343 2.25 3v3z"/></svg>
-        </div>
-        <h3>ResearchGate</h3>
-        <p>Publications, preprints &amp; research updates</p>
-        <div class="cc-arrow">→</div>
-      </a>
-      <a href="https://scholar.google.co.in/citations?hl=en&user=V13V4i8AAAAJ&view_op=list_works&sortby=pubdate" target="_blank" class="connect-card gs">
-        <div class="cc-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.838 3.94A8 8 0 0112 10a8 8 0 017.162 3.44L24 9.5z"/></svg>
-        </div>
-        <h3>Google Scholar</h3>
-        <p>87+ citations · Full publication list</p>
-        <div class="cc-arrow">→</div>
-      </a>
-      <a href="https://www.linkedin.com/in/deeksha-pandey-b1a76788/" target="_blank" class="connect-card li">
-        <div class="cc-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-        </div>
-        <h3>LinkedIn</h3>
-        <p>Professional network &amp; career updates</p>
-        <div class="cc-arrow">→</div>
-      </a>
-      <a href="https://orcid.org/0000-0002-7847-9870?lang=en" target="_blank" class="connect-card orcid">
-        <div class="cc-icon">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 01-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 3.872-2.484 3.872-3.722 0-2.016-1.284-3.722-3.828-3.722h-2.341z"/></svg>
-        </div>
-        <h3>ORCID</h3>
-        <p>0000-0002-7847-9870</p>
-        <div class="cc-arrow">→</div>
-      </a>
+  
+  <section id="tools" class="section tools-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="sec-num">04</span>
+        <h2 class="sec-title">Developed <em>Tools</em></h2>
+        <p class="sec-sub">Open-access bioinformatics webservers and prediction tools</p>
+      </div>
+      <div class="tools-grid">
+        <a href="http://proteininformatics.org/mkumar/bacarscan/" target="_blank" class="tcard">
+          <div class="tcard-top">
+            <span class="tcard-icon">🔍</span>
+            <span class="tcard-type">Webserver · Database</span>
+          </div>
+          <h3>BacARscan</h3>
+          <p>In-silico resource to discern diversity in antibiotic resistance genes across metagenomic and genomic datasets.</p>
+          <span class="tcard-link">Visit Tool →</span>
+        </a>
+        <a href="http://www.proteininformatics.org/mkumar/baceffluxpred/" target="_blank" class="tcard">
+          <div class="tcard-top">
+            <span class="tcard-icon">🧬</span>
+            <span class="tcard-type">ML Predictor · Two-tier</span>
+          </div>
+          <h3>BacEffluxPred</h3>
+          <p>Two-tier prediction system for bacterial efflux-conferring antibiotic resistance proteins and their subfamilies.</p>
+          <span class="tcard-link">Visit Tool →</span>
+        </a>
+        <a href="http://proteininformatics.org/mkumar/blacfampred/" target="_blank" class="tcard">
+          <div class="tcard-top">
+            <span class="tcard-icon">🧪</span>
+            <span class="tcard-type">HMM · Classifier</span>
+          </div>
+          <h3>β-LacFamPred</h3>
+          <p>HMM-based prediction and annotation tool for β-lactamase families — classifies class, subclass, and family.</p>
+          <span class="tcard-link">Visit Tool →</span>
+        </a>
+      </div>
     </div>
-    <div class="contact-block">
-      <div class="contact-item">
-        <div class="ci-icon">🏛️</div>
-        <div>
-          <strong>Office Address</strong>
-          <p>Department of Biotechnology<br/>Jaypee Institute of Information Technology<br/>A-10, Sector 62, Noida, U.P. 201309</p>
-        </div>
+  </section>
+
+  
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="sec-num">05</span>
+        <h2 class="sec-title">Get In <em>Touch</em></h2>
+        <p class="sec-sub">Connect, collaborate, and explore my work across platforms</p>
       </div>
-      <div class="contact-item">
-        <div class="ci-icon">🏠</div>
-        <div>
-          <strong>Residential Address</strong>
-          <p>Flat No. UG 01, Block E, East Platinum<br/>Sector 44, Noida, U.P. 201301</p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="cinfo-item">
+            <div class="cinfo-icon">🏛️</div>
+            <div>
+              <strong>Office</strong>
+              <p>Dept. of Biotechnology, Jaypee Institute of Information Technology<br>A-10, Sector 62, Noida, U.P. 201309</p>
+            </div>
+          </div>
+          <div class="cinfo-item">
+            <div class="cinfo-icon">📧</div>
+            <div>
+              <strong>Email</strong>
+              <p>deeksha.pandey@mail.jiit.ac.in</p>
+            </div>
+          </div>
+          <div class="cinfo-item">
+            <div class="cinfo-icon">📞</div>
+            <div>
+              <strong>Phone</strong>
+              <p>9450846026</p>
+            </div>
+          </div>
+          <div class="cinfo-item">
+            <div class="cinfo-icon">🎓</div>
+            <div>
+              <strong>PhD Supervisor</strong>
+              <p>Prof. Manish Kumar<br>Dept. of Biophysics, University of Delhi South Campus</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="contact-item">
-        <div class="ci-icon">📧</div>
-        <div>
-          <strong>Email</strong>
-          <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="394958575d5c405d5c5c524a5158080d795e54585055175a5654">[email&#160;protected]</a><br/><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e98d8c8c829a8188a9808a8e8c8bc79b8c9ac78087">[email&#160;protected]</a></p>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="ci-icon">📞</div>
-        <div>
-          <strong>Phone</strong>
-          <p>+91-9450846026 · +91-8587058439</p>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="ci-icon">🎓</div>
-        <div>
-          <strong>PhD Supervisor</strong>
-          <p>Prof. Manish Kumar<br/>Dept. of Biophysics, University of Delhi South Campus<br/><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="99f4f8f7f0eaf1d9eaf6ecedf1b7fdecb7f8fab7f0f7">[email&#160;protected]</a></p>
+        <div class="social-links">
+          <a href="https://www.researchgate.net/profile/Deeksha_Pandey4" target="_blank" class="slink">
+            <span class="slink-label">ResearchGate</span>
+            <span class="slink-arrow">→</span>
+          </a>
+          <a href="https://scholar.google.co.in/citations?hl=en&user=V13V4i8AAAAJ" target="_blank" class="slink">
+            <span class="slink-label">Google Scholar</span>
+            <span class="slink-arrow">→</span>
+          </a>
+          <a href="https://www.linkedin.com/in/deeksha-pandey-b1a76788/" target="_blank" class="slink">
+            <span class="slink-label">LinkedIn</span>
+            <span class="slink-arrow">→</span>
+          </a>
+          <a href="https://orcid.org/0000-0002-7847-9870" target="_blank" class="slink">
+            <span class="slink-label">ORCID · 0000-0002-7847-9870</span>
+            <span class="slink-arrow">→</span>
+          </a>
+          <a href="CV_Deeksha_Pandey.pdf" target="_blank" class="slink slink-cv">
+            <span class="slink-label">Download CV</span>
+            <span class="slink-arrow">↓</span>
+          </a>
         </div>
       </div>
     </div>
@@ -388,10 +383,24 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-logo">Dr. Deeksha <em>Pandey</em></div>
-      <p class="footer-tagline">Computational Biology · Antimicrobial Resistance · Machine Learning</p>
-      <div class="footer-links">
-        <a href="https://www.researchgate.net/profile/Deeksha_Pandey4" target="_blank">ResearchGate</a>
-        <a href="https://scholar.google.co.in/citations?hl=en&user=V13V4i8AAAAJ" target="_blank">Scholar</a>
-        <a href="https://www.linkedin.com/in/deeksha-pandey-b1a76788/" target="_blank">LinkedIn</a>
-     
+      <div class="footer-left">
+        <div class="footer-logo">Dr. Deeksha <em>Pandey</em></div>
+        <p>Computational Biology · Antimicrobial Resistance · Machine Learning</p>
+      </div>
+      <div class="footer-right">
+        <div class="footer-links">
+          <a href="https://www.researchgate.net/profile/Deeksha_Pandey4" target="_blank">ResearchGate</a>
+          <a href="https://scholar.google.co.in/citations?hl=en&user=V13V4i8AAAAJ" target="_blank">Scholar</a>
+          <a href="https://www.linkedin.com/in/deeksha-pandey-b1a76788/" target="_blank">LinkedIn</a>
+          <a href="https://orcid.org/0000-0002-7847-9870" target="_blank">ORCID</a>
+          <a href="CV_Deeksha_Pandey.pdf" target="_blank">CV</a>
+        </div>
+        <p class="footer-copy">© 2026 Dr. Deeksha Pandey · Assistant Professor (Grade-I) · JIIT Noida</p>
+        <p class="footer-created">Designed &amp; developed by <strong>Sudiksha Srivastav</strong> · <a href="mailto:sudiksha241206@gmail.com">sudiksha241206@gmail.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

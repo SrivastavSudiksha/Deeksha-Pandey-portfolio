@@ -7,158 +7,166 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     .page-hero {
-      min-height: 38vh;
-      display: flex;
-      align-items: flex-end;
-      padding: 8rem 3rem 4rem;
-      background: radial-gradient(ellipse at 20% 50%, rgba(0,0,0,0.03) 0%, transparent 60%), var(--bg);
+      padding: calc(var(--nav-h) + 4rem) 0 4rem;
+      background: var(--bg2);
       border-bottom: 1px solid var(--border);
     }
+    .page-hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 3rem; }
     .page-hero h1 {
       font-family: var(--font-display);
-      font-size: clamp(3rem, 6vw, 6rem);
-      font-weight: 400;
-      font-style: italic;
-      color: var(--accent);
-      line-height: 1.05;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.1;
+      margin-bottom: 0.8rem;
     }
-    .page-hero p {
-      font-size: 1rem;
-      color: var(--text-muted);
-      margin-top: 1rem;
-      max-width: 560px;
-    }
-    .page-section {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 5rem 3rem;
-    }
-    .page-category {
-      margin-bottom: 4rem;
-    }
-    .page-category-title {
+    .page-hero h1 em { font-style: italic; color: var(--teal); }
+    .page-hero p { font-size: 0.95rem; color: var(--text-muted); max-width: 500px; line-height: 1.7; }
+
+    .page-content { max-width: 1200px; margin: 0 auto; padding: 5rem 3rem; }
+    .page-block { margin-bottom: 4.5rem; }
+    .block-title {
       font-family: var(--font-mono);
-      font-size: 0.65rem;
-      letter-spacing: 4px;
+      font-size: 0.62rem;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 2rem;
+      color: var(--teal);
+      margin-bottom: 1.8rem;
       display: flex;
       align-items: center;
       gap: 1rem;
     }
-    .page-category-title::after {
-      content: '';
-      flex: 1;
-      max-width: 60px;
-      height: 1px;
-      background: var(--accent);
-    }
+    .block-title::after { content: ''; flex: 1; max-width: 50px; height: 1px; background: var(--teal); }
+
     .pos-list { display: flex; flex-direction: column; }
     .pos-item {
       display: grid;
-      grid-template-columns: 170px 1fr;
-      gap: 2rem;
+      grid-template-columns: 160px 1fr;
+      gap: 2.5rem;
       padding: 1.8rem 0;
       border-bottom: 1px solid var(--border);
       transition: background 0.2s;
     }
-    .pos-item:hover { background: rgba(0,0,0,0.015); }
+    .pos-item:hover { background: var(--bg2); margin: 0 -1rem; padding: 1.8rem 1rem; border-radius: var(--radius); }
     .pos-period {
       font-family: var(--font-mono);
-      font-size: 0.68rem;
-      color: var(--accent);
+      font-size: 0.65rem;
+      color: var(--teal);
       letter-spacing: 1px;
-      line-height: 1.7;
-      padding-top: 0.3rem;
+      line-height: 1.8;
+      padding-top: 3px;
+      font-weight: 500;
     }
     .pos-content h4 {
       font-family: var(--font-display);
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--text);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
     }
-    .pos-content p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 0.5rem;
-    }
-    .pos-content em {
-      font-size: 0.82rem;
-      color: var(--text-dim);
-      font-style: italic;
-    }
+    .pos-content p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 0.3rem; }
+    .pos-content em { font-size: 0.8rem; color: var(--text-dim); font-style: italic; }
     .pos-badge {
       display: inline-block;
-      margin-top: 0.4rem;
+      margin-top: 0.5rem;
       font-family: var(--font-mono);
-      font-size: 0.58rem;
+      font-size: 0.56rem;
       letter-spacing: 1px;
-      color: var(--accent);
-      border: 1px solid rgba(0,0,0,0.15);
-      padding: 0.2rem 0.7rem;
+      color: var(--teal);
+      background: var(--teal-light);
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
     }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-      gap: 0.8rem;
-      margin-top: 1rem;
-    }
-    .skill-tag {
-      font-family: var(--font-mono);
-      font-size: 0.63rem;
-      letter-spacing: 1px;
-      color: var(--accent2);
-      border: 1px solid var(--border);
-      padding: 0.55rem 0.9rem;
-      background: var(--surface);
-      line-height: 1.5;
-    }
-    .membership-list { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1rem; }
-    .membership-item {
+
+    .mem-list { display: flex; flex-direction: column; gap: 0.7rem; }
+    .mem-item {
       display: flex;
-      gap: 1rem;
+      gap: 1.2rem;
       align-items: flex-start;
       background: var(--surface);
       border: 1px solid var(--border);
-      padding: 1rem 1.2rem;
+      border-radius: var(--radius);
+      padding: 1rem 1.3rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
-    .membership-item .mi-num {
+    .mem-item:hover { border-color: rgba(42,122,90,0.3); box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
+    .mem-num {
       font-family: var(--font-mono);
-      font-size: 0.65rem;
-      color: var(--accent);
+      font-size: 0.62rem;
+      color: var(--teal);
       flex-shrink: 0;
-      padding-top: 0.2rem;
+      padding-top: 2px;
+      font-weight: 500;
     }
-    .membership-item p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.6;
+    .mem-item p { font-size: 0.84rem; color: var(--text-muted); line-height: 1.65; }
+    .mem-item p strong { color: var(--accent); font-weight: 600; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.7rem;
     }
-    .membership-item strong { color: var(--accent2); }
+    .skill-chip {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.5px;
+      color: var(--accent);
+      border: 1px solid var(--border);
+      padding: 0.6rem 1rem;
+      background: var(--surface);
+      border-radius: var(--radius);
+      line-height: 1.5;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .skill-chip:hover { border-color: var(--teal); background: var(--teal-light); color: var(--teal); }
+
+
+    .page-hero {
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .page-hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .page-hero-bg-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.93) 50%, rgba(255,255,255,0.75) 100%);
+    }
+    .page-hero-inner {
+      position: relative;
+      z-index: 2;
+    }
     @media (max-width: 768px) {
-      .page-hero { padding: 7rem 1.5rem 3rem; }
-      .page-section { padding: 3rem 1.5rem; }
-      .pos-item { grid-template-columns: 1fr; gap: 0.4rem; }
+      .page-hero-inner { padding: 0 1.5rem; }
+      .page-content { padding: 3rem 1.5rem; }
+      .pos-item { grid-template-columns: 1fr; gap: 0.5rem; }
     }
   </style>
 </head>
 <body>
+
   <nav id="navbar">
-    <div class="nav-logo"><a href="index.html" style="text-decoration:none;color:inherit;">DP</a></div>
+    <div class="nav-logo"><a href="index.html">DP</a></div>
     <ul class="nav-links">
       <li><a href="index.html#home">Home</a></li>
       <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#research">Research</a></li>
       <li><a href="index.html#publications">Publications</a></li>
       <li><a href="index.html#tools">Tools</a></li>
-      <li><a href="index.html#connect">Connect</a></li>
-      <li><a href="positions.html" style="color:var(--accent);">Positions</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="positions.html" class="active">Positions</a></li>
       <li><a href="awards.html">Awards</a></li>
       <li><a href="students.html">Students</a></li>
     </ul>
@@ -166,14 +174,16 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
+
   <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">✕</button>
     <ul>
       <li><a href="index.html#home" onclick="closeMobile()">Home</a></li>
       <li><a href="index.html#about" onclick="closeMobile()">About</a></li>
       <li><a href="index.html#research" onclick="closeMobile()">Research</a></li>
       <li><a href="index.html#publications" onclick="closeMobile()">Publications</a></li>
       <li><a href="index.html#tools" onclick="closeMobile()">Tools</a></li>
-      <li><a href="index.html#connect" onclick="closeMobile()">Connect</a></li>
+      <li><a href="index.html#contact" onclick="closeMobile()">Contact</a></li>
       <li><a href="positions.html" onclick="closeMobile()">Positions</a></li>
       <li><a href="awards.html" onclick="closeMobile()">Awards</a></li>
       <li><a href="students.html" onclick="closeMobile()">Students</a></li>
@@ -181,17 +191,21 @@
   </div>
 
   <div class="page-hero">
-    <div>
-      <div class="section-label">Positions &amp; Experience</div>
-      <h1>Career <em>Journey</em></h1>
+      <div class="page-hero-bg">
+      <img src="1779227140359_image.png" alt="" />
+      <div class="page-hero-bg-overlay"></div>
+    </div>
+    <div class="page-hero-inner">
+      <span class="sec-num">Career &amp; Experience</span>
+      <h1>Positions &amp; <em>Journey</em></h1>
       <p>Employment history, research experience, technical skills, and professional memberships.</p>
     </div>
   </div>
 
-  <div class="page-section">
+  <div class="page-content">
 
-    <div class="page-category">
-      <div class="page-category-title">Employment &amp; Research Experience</div>
+    <div class="page-block">
+      <div class="block-title">Employment &amp; Research Experience</div>
       <div class="pos-list">
         <div class="pos-item">
           <div class="pos-period">July 2025<br/>Present</div>
@@ -213,7 +227,7 @@
           <div class="pos-period">July 2023<br/>Oct 2023</div>
           <div class="pos-content">
             <h4>Project Assistant</h4>
-            <p>Translational Bioinformatics Group, International Centre for Genetic Engineering and Biotechnology (ICGEB), New Delhi</p>
+            <p>Translational Bioinformatics Group, ICGEB, New Delhi</p>
           </div>
         </div>
         <div class="pos-item">
@@ -249,93 +263,93 @@
       </div>
     </div>
 
-    <div class="page-category">
-      <div class="page-category-title">Editorial &amp; Committee Roles</div>
-      <div class="membership-list">
-        <div class="membership-item">
-          <div class="mi-num">01</div>
+    <div class="page-block">
+      <div class="block-title">Editorial &amp; Committee Roles</div>
+      <div class="mem-list">
+        <div class="mem-item">
+          <div class="mem-num">01</div>
           <p><strong>Editorial Board Member</strong> — BMC Microbiology, 2025–Present</p>
         </div>
-        <div class="membership-item">
-          <div class="mi-num">02</div>
+        <div class="mem-item">
+          <div class="mem-num">02</div>
           <p><strong>Steering Committee Member</strong> — The 24th International Conference on Bioinformatics (InCoB 2025), 18–20 Sept 2025, BOSE Institute, Kolkata, India</p>
         </div>
-        <div class="membership-item">
-          <div class="mi-num">03</div>
+        <div class="mem-item">
+          <div class="mem-num">03</div>
           <p><strong>Peer Reviewer</strong> — PeerJ, BMC Medical Genomics, Journal of Obstetrics and Gynaecology, Scientific Reports, Qeios Journal</p>
         </div>
       </div>
     </div>
 
-    <div class="page-category">
-      <div class="page-category-title">Professional Memberships</div>
-      <div class="membership-list">
-        <div class="membership-item">
-          <div class="mi-num">01</div>
+    <div class="page-block">
+      <div class="block-title">Professional Memberships</div>
+      <div class="mem-list">
+        <div class="mem-item">
+          <div class="mem-num">01</div>
           <p>Active member and contributor — <strong>Asia-Pacific Bioinformatics Network (APBioNET)</strong></p>
         </div>
-        <div class="membership-item">
-          <div class="mi-num">02</div>
+        <div class="mem-item">
+          <div class="mem-num">02</div>
           <p>Member — <strong>BIOinformatics CLUb for Experimenting Scientists (BIOCLUES)</strong></p>
         </div>
-        <div class="membership-item">
-          <div class="mi-num">03</div>
+        <div class="mem-item">
+          <div class="mem-num">03</div>
           <p>Active member — <strong>Bioinformatics and Drug Discovery Society (BIDDS)</strong></p>
         </div>
-        <div class="membership-item">
-          <div class="mi-num">04</div>
+        <div class="mem-item">
+          <div class="mem-num">04</div>
           <p>Member — <strong>European Society of Clinical Microbiology and Infectious Diseases (ESCMID)</strong></p>
         </div>
-        <div class="membership-item">
-          <div class="mi-num">05</div>
+        <div class="mem-item">
+          <div class="mem-num">05</div>
           <p>Global Outreach Postdoctoral Member — <strong>American Society for Microbiology (ASM)</strong></p>
         </div>
       </div>
     </div>
 
-    <div class="page-category">
-      <div class="page-category-title">Technical Skills</div>
+    <div class="page-block">
+      <div class="block-title">Technical Skills</div>
       <div class="skills-grid">
-        <div class="skill-tag">Machine Learning · SVM · HMM · PSSM</div>
-        <div class="skill-tag">Molecular Docking (Autodock, Schrodinger)</div>
-        <div class="skill-tag">Protein-Protein Docking (Cluspro, Zdock, Hex)</div>
-        <div class="skill-tag">MD Simulation (Schrodinger Desmond)</div>
-        <div class="skill-tag">3D Structure Prediction (I-TASSER, PyMol)</div>
-        <div class="skill-tag">NGS / WGS Analysis (bwa, bowtie, samtools)</div>
-        <div class="skill-tag">Metagenomics &amp; -Omics Integration</div>
-        <div class="skill-tag">Phylogenetic Analysis (BEAST, Jalview, ESPript)</div>
-        <div class="skill-tag">AMR Databases (CARD, RGI-CARD, DeepARG, Resfinder)</div>
-        <div class="skill-tag">Pathway Analysis (KEGG, Reactome)</div>
-        <div class="skill-tag">System Biology (CYTOSCAPE, String)</div>
-        <div class="skill-tag">Data Visualization (ggplot, R Studio)</div>
-        <div class="skill-tag">Programming: PERL · R · Shell · HTML · CSS</div>
-        <div class="skill-tag">Database Dev: XAMPP · Apache · PHP</div>
-        <div class="skill-tag">HPC Systems · Conda · Git/GitHub</div>
-        <div class="skill-tag">Motif Search: MEME/MAST · InterProScan · Pfam</div>
-        <div class="skill-tag">Sequence Alignment: BLAST · CD-HIT · ClustalW</div>
-        <div class="skill-tag">Linux · Windows · Mac</div>
+        <div class="skill-chip">Machine Learning · SVM · HMM · PSSM</div>
+        <div class="skill-chip">Molecular Docking (Autodock, Schrodinger)</div>
+        <div class="skill-chip">Protein-Protein Docking (Cluspro, Zdock, Hex)</div>
+        <div class="skill-chip">MD Simulation (Schrodinger Desmond)</div>
+        <div class="skill-chip">3D Structure Prediction (I-TASSER, PyMol)</div>
+        <div class="skill-chip">NGS / WGS Analysis (bwa, bowtie, samtools)</div>
+        <div class="skill-chip">Metagenomics &amp; -Omics Integration</div>
+        <div class="skill-chip">Phylogenetic Analysis (BEAST, Jalview, ESPript)</div>
+        <div class="skill-chip">AMR Databases (CARD, RGI-CARD, DeepARG, Resfinder)</div>
+        <div class="skill-chip">Pathway Analysis (KEGG, Reactome)</div>
+        <div class="skill-chip">System Biology (CYTOSCAPE, String)</div>
+        <div class="skill-chip">Data Visualization (ggplot, R Studio)</div>
+        <div class="skill-chip">Programming: PERL · R · Shell · HTML · CSS</div>
+        <div class="skill-chip">Database Dev: XAMPP · Apache · PHP</div>
+        <div class="skill-chip">HPC Systems · Conda · Git/GitHub</div>
+        <div class="skill-chip">Motif Search: MEME/MAST · InterProScan · Pfam</div>
+        <div class="skill-chip">Sequence Alignment: BLAST · CD-HIT · ClustalW</div>
+        <div class="skill-chip">Linux · Windows · Mac</div>
       </div>
     </div>
 
-    <div class="page-category">
-      <div class="page-category-title">Faculty Development Program</div>
-      <div class="membership-list">
-        <div class="membership-item">
-          <div class="mi-num">01</div>
+    <div class="page-block">
+      <div class="block-title">Faculty Development Program</div>
+      <div class="mem-list">
+        <div class="mem-item">
+          <div class="mem-num">01</div>
           <p>Six-Day FDP on <strong>"One Health – Innovative Solutions for Health, Productivity and Conservation Challenges"</strong>, Department of Biotechnology, JIIT Noida, July 14–19, 2025</p>
         </div>
       </div>
     </div>
 
-    <div class="page-category">
-      <div class="page-category-title">Invited Talks &amp; Keynote</div>
-      <div class="membership-list">
-        <div class="membership-item">
-          <div class="mi-num">2024</div>
+    <div class="page-block">
+      <div class="block-title">Invited Talks &amp; Keynote</div>
+      <div class="mem-list">
+        <div class="mem-item">
+          <div class="mem-num">2024</div>
           <p>Invited Panelist — <strong>"Bioinsight Forum: A Panel Discussion on Drug Discovery &amp; Bioinformatics"</strong>, Delhi Technological University (DTU), in association with ISCB-SC RSG-India and BioSoc-DTU, February 09, 2024</p>
         </div>
-        <div class="membership-item">
-          <div class="mi-num">2023</div>
+        <div class="mem-item">
+          <div class="mem-num">2023</div>
           <p>Lecture cum Hands-on Session — <strong>"Hands-on Approach to Modelling and Understanding Hidden Markov Models"</strong>, Workshop on "Artificial Intelligence in Modern Biology", September 12–14, 2023, ICGEB, New Delhi</p>
         </div>
       </div>
@@ -345,18 +359,24 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-logo">Dr. Deeksha <em>Pandey</em></div>
-      <p class="footer-tagline">Computational Biology · Antimicrobial Resistance · Machine Learning</p>
-      <div class="footer-links">
-        <a href="https://www.researchgate.net/profile/Deeksha_Pandey4" target="_blank">ResearchGate</a>
-        <a href="https://scholar.google.co.in/citations?hl=en&user=V13V4i8AAAAJ" target="_blank">Scholar</a>
-        <a href="https://www.linkedin.com/in/deeksha-pandey-b1a76788/" target="_blank">LinkedIn</a>
-        <a href="https://orcid.org/0000-0002-7847-9870" target="_blank">ORCID</a>
-        <a href="CV_Deeksha_Pandey.pdf" target="_blank">Download CV</a>
+      <div class="footer-left">
+        <div class="footer-logo">Dr. Deeksha <em>Pandey</em></div>
+        <p>Computational Biology · Antimicrobial Resistance · Machine Learning</p>
       </div>
-      <p class="footer-copy">© 2026 Dr. Deeksha Pandey · Assistant Professor (Grade-I) · Jaypee Institute of Information Technology</p>
+      <div class="footer-right">
+        <div class="footer-links">
+          <a href="https://www.researchgate.net/profile/Deeksha_Pandey4" target="_blank">ResearchGate</a>
+          <a href="https://scholar.google.co.in/citations?hl=en&user=V13V4i8AAAAJ" target="_blank">Scholar</a>
+          <a href="https://www.linkedin.com/in/deeksha-pandey-b1a76788/" target="_blank">LinkedIn</a>
+          <a href="https://orcid.org/0000-0002-7847-9870" target="_blank">ORCID</a>
+          <a href="CV_Deeksha_Pandey.pdf" target="_blank">CV</a>
+        </div>
+        <p class="footer-copy">© 2026 Dr. Deeksha Pandey · Assistant Professor (Grade-I) · JIIT Noida</p>
+        <p class="footer-created">Designed &amp; developed by <strong>Sudiksha Srivastav</strong> · <a href="mailto:sudiksha241206@gmail.com">sudiksha241206@gmail.com</a></p>
+      </div>
     </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
