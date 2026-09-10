@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,175 +8,36 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    .page-hero {
-      padding: calc(var(--nav-h) + 4rem) 0 4rem;
-      background: var(--bg2);
-      border-bottom: 1px solid var(--border);
-    }
-    .page-hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 3rem; }
-    .page-hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.8rem, 5vw, 4.5rem);
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.1;
-      margin-bottom: 0.8rem;
-    }
-    .page-hero h1 em { font-style: italic; color: var(--teal); }
-    .page-hero p { font-size: 0.95rem; color: var(--text-muted); max-width: 500px; line-height: 1.7; }
-
-    .page-content { max-width: 1200px; margin: 0 auto; padding: 5rem 3rem; }
-    .page-block { margin-bottom: 4.5rem; }
-    .block-title {
-      font-family: var(--font-mono);
-      font-size: 0.62rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 1.8rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .block-title::after { content: ''; flex: 1; max-width: 50px; height: 1px; background: var(--teal); }
-
-    .pos-list { display: flex; flex-direction: column; }
-    .pos-item {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 2.5rem;
-      padding: 1.8rem 0;
-      border-bottom: 1px solid var(--border);
-      transition: background 0.2s;
-    }
-    .pos-item:hover { background: var(--bg2); margin: 0 -1rem; padding: 1.8rem 1rem; border-radius: var(--radius); }
-    .pos-period {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      color: var(--teal);
-      letter-spacing: 1px;
-      line-height: 1.8;
-      padding-top: 3px;
-      font-weight: 500;
-    }
-    .pos-content h4 {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.35rem;
-    }
-    .pos-content p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 0.3rem; }
-    .pos-content em { font-size: 0.8rem; color: var(--text-dim); font-style: italic; }
-    .pos-badge {
-      display: inline-block;
-      margin-top: 0.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.56rem;
-      letter-spacing: 1px;
-      color: var(--teal);
-      background: var(--teal-light);
-      padding: 0.2rem 0.6rem;
-      border-radius: 2px;
-    }
-
-    .mem-list { display: flex; flex-direction: column; gap: 0.7rem; }
-    .mem-item {
-      display: flex;
-      gap: 1.2rem;
-      align-items: flex-start;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem 1.3rem;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .mem-item:hover { border-color: rgba(42,122,90,0.3); box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
-    .mem-num {
-      font-family: var(--font-mono);
-      font-size: 0.62rem;
-      color: var(--teal);
-      flex-shrink: 0;
-      padding-top: 2px;
-      font-weight: 500;
-    }
-    .mem-item p { font-size: 0.84rem; color: var(--text-muted); line-height: 1.65; }
-    .mem-item p strong { color: var(--accent); font-weight: 600; }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 0.7rem;
-    }
-    .skill-chip {
-      font-family: var(--font-mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.5px;
-      color: var(--accent);
-      border: 1px solid var(--border);
-      padding: 0.6rem 1rem;
-      background: var(--surface);
-      border-radius: var(--radius);
-      line-height: 1.5;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .skill-chip:hover { border-color: var(--teal); background: var(--teal-light); color: var(--teal); }
-
-
-    .page-hero {
-      position: relative;
-      overflow: hidden;
-    }
-    .page-hero-bg {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
-    .page-hero-bg img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-    .page-hero-bg-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(105deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.93) 50%, rgba(255,255,255,0.75) 100%);
-    }
-    .page-hero-inner {
-      position: relative;
-      z-index: 2;
-    }
-    @media (max-width: 768px) {
-      .page-hero-inner { padding: 0 1.5rem; }
-      .page-content { padding: 3rem 1.5rem; }
-      .pos-item { grid-template-columns: 1fr; gap: 0.5rem; }
-    }
-  </style>
+<base target="_blank">
 </head>
 <body>
 
   <nav id="navbar">
     <div class="nav-logo"><a href="index.html">DP</a></div>
-    <ul class="nav-links">
-      <li><a href="index.html#home">Home</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#research">Research</a></li>
-      <li><a href="index.html#publications">Publications</a></li>
-      <li><a href="index.html#tools">Tools</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-      <li><a href="positions.html" class="active">Positions</a></li>
-      <li><a href="awards.html">Awards</a></li>
-      <li><a href="students.html">Students</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#research">Research</a></li>
+        <li><a href="index.html#publications">Publications</a></li>
+        <li><a href="index.html#tools">Tools</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="positions.html" class="active">Positions</a></li>
+        <li><a href="awards.html" class="">Awards</a></li>
+        <li><a href="students.html" class="">Students</a></li>
+      </ul>
+      <button id="themeToggle" aria-label="Toggle dark / light mode">
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-close" id="mobileClose">✕</button>
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
     <ul>
       <li><a href="index.html#home" onclick="closeMobile()">Home</a></li>
       <li><a href="index.html#about" onclick="closeMobile()">About</a></li>
@@ -191,10 +52,11 @@
   </div>
 
   <div class="page-hero">
-      <div class="page-hero-bg">
-      <img src="1779227140359_image.png" alt="" />
+    <div class="page-hero-bg">
+      <img src="backgroung.png" alt="" />
       <div class="page-hero-bg-overlay"></div>
     </div>
+    <canvas class="network-canvas" aria-hidden="true"></canvas>
     <div class="page-hero-inner">
       <span class="sec-num">Career &amp; Experience</span>
       <h1>Positions &amp; <em>Journey</em></h1>

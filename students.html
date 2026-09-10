@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,190 +8,36 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    .page-hero {
-      padding: calc(var(--nav-h) + 4rem) 0 4rem;
-      background: var(--bg2);
-      border-bottom: 1px solid var(--border);
-    }
-    .page-hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 3rem; }
-    .page-hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.8rem, 5vw, 4.5rem);
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.1;
-      margin-bottom: 0.8rem;
-    }
-    .page-hero h1 em { font-style: italic; color: var(--teal); }
-    .page-hero p { font-size: 0.95rem; color: var(--text-muted); max-width: 520px; line-height: 1.7; }
-
-    .page-content { max-width: 1200px; margin: 0 auto; padding: 5rem 3rem; }
-    .page-block { margin-bottom: 4rem; }
-    .block-title {
-      font-family: var(--font-mono);
-      font-size: 0.62rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 1.8rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .block-title::after { content: ''; flex: 1; max-width: 50px; height: 1px; background: var(--teal); }
-
-    .students-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-      gap: 1.2rem;
-    }
-    .student-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.8rem;
-      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
-      position: relative;
-      overflow: hidden;
-    }
-    .student-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--teal), var(--accent2));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s;
-    }
-    .student-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.09); border-color: rgba(42,122,90,0.3); }
-    .student-card:hover::before { transform: scaleX(1); }
-    .student-avatar {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: var(--teal-light);
-      border: 1px solid rgba(42,122,90,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      color: var(--teal);
-      margin-bottom: 1rem;
-      font-style: italic;
-      font-weight: 700;
-    }
-    .student-card h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 0.3rem; }
-    .student-topic { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.8rem; line-height: 1.5; }
-    .student-year {
-      font-family: var(--font-mono);
-      font-size: 0.58rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--teal);
-      background: var(--teal-light);
-      padding: 0.2rem 0.6rem;
-      border-radius: 2px;
-      display: inline-block;
-    }
-
-    .empty-state {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 3.5rem 2rem;
-      border: 1.5px dashed var(--border);
-      border-radius: var(--radius);
-      color: var(--text-dim);
-    }
-    .empty-state .es-icon { font-size: 2rem; margin-bottom: 0.8rem; }
-    .empty-state p { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; }
-    .empty-state small { font-size: 0.75rem; color: var(--text-dim); font-family: var(--font-body); letter-spacing: 0; text-transform: none; display: block; margin-top: 0.4rem; }
-
-    .join-banner {
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
-      border-radius: var(--radius);
-      padding: 3rem;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      margin-top: 1rem;
-    }
-    .join-banner h3 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; font-style: italic; margin-bottom: 0.5rem; }
-    .join-banner p { font-size: 0.88rem; color: rgba(255,255,255,0.8); line-height: 1.6; max-width: 420px; }
-    .join-btn {
-      display: inline-block;
-      background: #fff;
-      color: var(--accent);
-      font-family: var(--font-body);
-      font-size: 0.82rem;
-      font-weight: 600;
-      padding: 0.75rem 1.8rem;
-      border-radius: var(--radius);
-      text-decoration: none;
-      white-space: nowrap;
-      transition: opacity 0.2s;
-      flex-shrink: 0;
-    }
-    .join-btn:hover { opacity: 0.88; }
-
-
-    .page-hero {
-      position: relative;
-      overflow: hidden;
-    }
-    .page-hero-bg {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
-    .page-hero-bg img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-    .page-hero-bg-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(105deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.93) 50%, rgba(255,255,255,0.75) 100%);
-    }
-    .page-hero-inner {
-      position: relative;
-      z-index: 2;
-    }
-    @media (max-width: 768px) {
-      .page-hero-inner { padding: 0 1.5rem; }
-      .page-content { padding: 3rem 1.5rem; }
-      .join-banner { flex-direction: column; }
-    }
-  </style>
+<base target="_blank">
 </head>
 <body>
 
   <nav id="navbar">
     <div class="nav-logo"><a href="index.html">DP</a></div>
-    <ul class="nav-links">
-      <li><a href="index.html#home">Home</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#research">Research</a></li>
-      <li><a href="index.html#publications">Publications</a></li>
-      <li><a href="index.html#tools">Tools</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-      <li><a href="positions.html">Positions</a></li>
-      <li><a href="awards.html">Awards</a></li>
-      <li><a href="students.html" class="active">Students</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#research">Research</a></li>
+        <li><a href="index.html#publications">Publications</a></li>
+        <li><a href="index.html#tools">Tools</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="positions.html" class="">Positions</a></li>
+        <li><a href="awards.html" class="">Awards</a></li>
+        <li><a href="students.html" class="active">Students</a></li>
+      </ul>
+      <button id="themeToggle" aria-label="Toggle dark / light mode">
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-close" id="mobileClose">✕</button>
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
     <ul>
       <li><a href="index.html#home" onclick="closeMobile()">Home</a></li>
       <li><a href="index.html#about" onclick="closeMobile()">About</a></li>
@@ -206,10 +52,11 @@
   </div>
 
   <div class="page-hero">
-      <div class="page-hero-bg">
-      <img src="1779227140359_image.png" alt="" />
+    <div class="page-hero-bg">
+      <img src="backgroung.png" alt="" />
       <div class="page-hero-bg-overlay"></div>
     </div>
+    <canvas class="network-canvas" aria-hidden="true"></canvas>
     <div class="page-hero-inner">
       <span class="sec-num">Mentorship</span>
       <h1>My <em>Students</em></h1>

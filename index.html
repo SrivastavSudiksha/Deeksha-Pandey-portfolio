@@ -1,36 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dr. Deeksha Pandey | Computational Biology & Bioinformatics</title>
+  <meta name="description" content="Dr. Deeksha Pandey — computational biologist working on antimicrobial resistance, machine learning in biology, and bioinformatics tool development."/>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<base target="_blank">
 </head>
 <body>
 
   <nav id="navbar">
     <div class="nav-logo"><a href="index.html">DP</a></div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#tools">Tools</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="positions.html">Positions</a></li>
-      <li><a href="awards.html">Awards</a></li>
-      <li><a href="students.html">Students</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="positions.html">Positions</a></li>
+        <li><a href="awards.html">Awards</a></li>
+        <li><a href="students.html">Students</a></li>
+      </ul>
+      <button id="themeToggle" aria-label="Toggle dark / light mode">
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-close" id="mobileClose">✕</button>
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
     <ul>
       <li><a href="#home" onclick="closeMobile()">Home</a></li>
       <li><a href="#about" onclick="closeMobile()">About</a></li>
@@ -44,16 +52,16 @@
     </ul>
   </div>
 
-  
   <section id="home" class="hero">
     <div class="hero-bg">
       <img src="backgroung.png" alt="" />
       <div class="hero-overlay"></div>
     </div>
+    <canvas class="network-canvas" aria-hidden="true"></canvas>
     <div class="hero-inner">
       <div class="hero-left">
         <span class="hero-tag">Assistant Professor (Grade-I) · JIIT Noida</span>
-        <h1>Dr. Deeksha<br><em>Pandey</em></h1>
+        <h1 class="hero-title-oneline" style="white-space:nowrap;font-size:clamp(1.7rem,3.3vw,3.1rem)">Dr. Deeksha <em>Pandey</em></h1>
         <p class="hero-sub">Computational Biology &amp; Bioinformatics · Antimicrobial Resistance · Machine Learning</p>
         <div class="hero-stats">
           <div class="hstat"><span class="hstat-n" data-target="13">0</span><span class="hstat-plus">+</span><small>Publications</small></div>
@@ -68,18 +76,21 @@
       <div class="hero-right">
         <div class="hero-photo-wrap">
           <img src="profile.jpeg" alt="Dr. Deeksha Pandey" class="hero-photo" />
-          <div class="hero-photo-badge">Assistant Professor at Jaypee Institute Of Information Technology</div>
+          <div class="hero-photo-badge">Assistant Professor · Jaypee Institute of Information Technology</div>
         </div>
       </div>
     </div>
-    <div class="hero-scroll"><span></span></div>
+    <div class="hero-scroll" aria-hidden="true"><span></span></div>
   </section>
 
-  
+  <div class="dna-strip" aria-hidden="true">
+    <div class="dna-track"><span>ATG <b>CCG</b> TTA <i>GGC</i> ACT <b>TAA</b> GCT <i>ATC</i> GGA <b>TGC</b> CAA <i>TGG</i> AGT <b>CGT</b> AAC <i>GTT</i> CCA <b>AGC</b> TGA <i>GAT</i> TCG <b>AAA</b> TTG <i>CCC</i> GTA</span><span>ATG <b>CCG</b> TTA <i>GGC</i> ACT <b>TAA</b> GCT <i>ATC</i> GGA <b>TGC</b> CAA <i>TGG</i> AGT <b>CGT</b> AAC <i>GTT</i> CCA <b>AGC</b> TGA <i>GAT</i> TCG <b>AAA</b> TTG <i>CCC</i> GTA</span><span>ATG <b>CCG</b> TTA <i>GGC</i> ACT <b>TAA</b> GCT <i>ATC</i> GGA <b>TGC</b> CAA <i>TGG</i> AGT <b>CGT</b> AAC <i>GTT</i> CCA <b>AGC</b> TGA <i>GAT</i> TCG <b>AAA</b> TTG <i>CCC</i> GTA</span><span>ATG <b>CCG</b> TTA <i>GGC</i> ACT <b>TAA</b> GCT <i>ATC</i> GGA <b>TGC</b> CAA <i>TGG</i> AGT <b>CGT</b> AAC <i>GTT</i> CCA <b>AGC</b> TGA <i>GAT</i> TCG <b>AAA</b> TTG <i>CCC</i> GTA</span><span>ATG <b>CCG</b> TTA <i>GGC</i> ACT <b>TAA</b> GCT <i>ATC</i> GGA <b>TGC</b> CAA <i>TGG</i> AGT <b>CGT</b> AAC <i>GTT</i> CCA <b>AGC</b> TGA <i>GAT</i> TCG <b>AAA</b> TTG <i>CCC</i> GTA</span><span>ATG <b>CCG</b> TTA <i>GGC</i> ACT <b>TAA</b> GCT <i>ATC</i> GGA <b>TGC</b> CAA <i>TGG</i> AGT <b>CGT</b> AAC <i>GTT</i> CCA <b>AGC</b> TGA <i>GAT</i> TCG <b>AAA</b> TTG <i>CCC</i> GTA</span></div>
+  </div>
+
   <section id="about" class="section about-section">
     <div class="container">
       <div class="section-header">
-        <span class="sec-num">01</span>
+        <span class="sec-num">01 · Profile</span>
         <h2 class="sec-title">About <em>Me</em></h2>
       </div>
       <div class="about-grid">
@@ -89,16 +100,16 @@
           <p>Currently serving as <strong>Assistant Professor (Grade-I)</strong> at the Department of Biotechnology, Jaypee Institute of Information Technology, Noida. Previously, I was a Project Scientist-I at the Translational Bioinformatics Group, <strong>ICGEB, New Delhi</strong>, and a Research Associate at the <strong>Cancer Science Institute, NUS Singapore</strong>.</p>
           <p>I serve as <strong>Editorial Board Member, BMC Microbiology (2025–Present)</strong> and <strong>Steering Committee Member, InCoB 2025</strong>.</p>
           <div class="about-tags">
-            <span>APBioNET Member</span>
-            <span>ESCMID Member</span>
+            <span>APBioNET</span>
+            <span>ESCMID</span>
             <span>ASM Global Outreach</span>
-            <span>BIDDS Member</span>
-            <span>BIOCLUES Member</span>
+            <span>BIDDS</span>
+            <span>BIOCLUES</span>
           </div>
         </div>
         <div class="about-sidebar">
           <div class="edu-card">
-            <h3>Education</h3>
+            <h3>Education · Lab Notebook</h3>
             <div class="edu-item">
               <div class="edu-dot"></div>
               <div>
@@ -147,47 +158,65 @@
     </div>
   </section>
 
-  
   <section id="research" class="section research-section">
     <div class="container">
       <div class="section-header">
-        <span class="sec-num">02</span>
+        <span class="sec-num">02 · Focus Areas</span>
         <h2 class="sec-title">Research <em>Focus</em></h2>
         <p class="sec-sub">My work bridges computational methods with pressing challenges in infectious disease biology</p>
       </div>
+
+      <div class="research-visual">
+        <div class="lab-monitor">
+          <div class="lab-monitor-bar"><i></i><i></i><i></i><span>docking_run_042.mp4 — molecular viewer</span></div>
+          <video src="GIF.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <p class="lab-caption">Ligand–protein docking simulation · binding-pocket dynamics</p>
+        <div class="research-visual-text">
+          <span class="sec-num">In the lab</span>
+          <h3>From molecular dynamics to <em>actionable insight</em></h3>
+          <p>Every tool and model we build is grounded in biological mechanism — from simulating how a ligand settles into a binding pocket, to scanning metagenomes for the next emerging resistance gene.</p>
+          <ul class="check-list">
+            <li>Structure-guided analysis of resistance-conferring mutations</li>
+            <li>ML classifiers trained on curated -omics datasets</li>
+            <li>Open webservers used by the global AMR community</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="research-grid">
         <div class="rcard">
-          <div class="rcard-icon">🦠</div>
+          <span class="hex-wrap"><div class="rcard-icon">🦠</div></span>
           <h3>Antimicrobial Resistance</h3>
           <p>Evolution, spread, and molecular mechanisms of antibiotic resistance genes (ARGs) in ESKAPE pathogens. Investigating OXA, AmpC, and β-lactamases.</p>
           <div class="rcard-tags"><span>AMR</span><span>ESKAPE</span><span>β-lactamases</span></div>
         </div>
         <div class="rcard">
-          <div class="rcard-icon">🤖</div>
+          <span class="hex-wrap"><div class="rcard-icon">🤖</div></span>
           <h3>Machine Learning in Biology</h3>
           <p>ML-based tools for identification and characterization of AMR proteins and genes in -omics datasets. Built BacEffluxPred, β-LacFamPred.</p>
           <div class="rcard-tags"><span>ML</span><span>SVM</span><span>HMM</span></div>
         </div>
         <div class="rcard">
-          <div class="rcard-icon">🔬</div>
+          <span class="hex-wrap"><div class="rcard-icon">🔬</div></span>
           <h3>Structural Bioinformatics</h3>
           <p>Molecular dynamics simulations and docking to investigate structural impacts of mutations — DRD2 receptor, HIV-host protein interactions.</p>
           <div class="rcard-tags"><span>MD Simulation</span><span>Docking</span><span>CADD</span></div>
         </div>
         <div class="rcard">
-          <div class="rcard-icon">🧫</div>
+          <span class="hex-wrap"><div class="rcard-icon">🧫</div></span>
           <h3>Metagenomics &amp; Surveillance</h3>
           <p>NGS-based metagenomic analysis for surveillance of ARG diversity across clinical, environmental, and animal reservoirs using BacARscan.</p>
           <div class="rcard-tags"><span>NGS</span><span>WGS</span><span>Metagenomics</span></div>
         </div>
         <div class="rcard">
-          <div class="rcard-icon">💊</div>
+          <span class="hex-wrap"><div class="rcard-icon">💊</div></span>
           <h3>Drug Repurposing</h3>
           <p>Investigating antiviral compounds against Chandipura virus via high-energy interaction analysis of the RdRp domain of polymerase protein L.</p>
           <div class="rcard-tags"><span>Antivirals</span><span>RdRp</span><span>Docking</span></div>
         </div>
         <div class="rcard">
-          <div class="rcard-icon">🎗️</div>
+          <span class="hex-wrap"><div class="rcard-icon">🎗️</div></span>
           <h3>Cancer Biology</h3>
           <p>Mutational landscape of microsatellite unstable cancers at Cancer Science Institute, NUS Singapore. Mutational signatures at microsatellite repeats.</p>
           <div class="rcard-tags"><span>MSI</span><span>Cancer</span><span>Mutation</span></div>
@@ -196,11 +225,14 @@
     </div>
   </section>
 
-  
+  <div class="dna-strip" aria-hidden="true">
+    <div class="dna-track"><span>ATG <b>CCG</b> TTA <i>GGC</i> ACT <b>TAA</b> GCT <i>ATC</i> GGA <b>TGC</b> CAA <i>TGG</i> AGT <b>CGT</b> AAC <i>GTT</i> CCA <b>AGC</b> TGA <i>GAT</i> TCG <b>AAA</b> TTG <i>CCC</i> GTA</span><span>ATG <b>CCG</b> TTA <i>GGC</i> ACT <b>TAA</b> GCT <i>ATC</i> GGA <b>TGC</b> CAA <i>TGG</i> AGT <b>CGT</b> AAC <i>GTT</i> CCA <b>AGC</b> TGA <i>GAT</i> TCG <b>AAA</b> TTG <i>CCC</i> GTA</span><span>ATG <b>CCG</b> TTA <i>GGC</i> ACT <b>TAA</b> GCT <i>ATC</i> GGA <b>TGC</b> CAA <i>TGG</i> AGT <b>CGT</b> AAC <i>GTT</i> CCA <b>AGC</b> TGA <i>GAT</i> TCG <b>AAA</b> TTG <i>CCC</i> GTA</span><span>ATG <b>CCG</b> TTA <i>GGC</i> ACT <b>TAA</b> GCT <i>ATC</i> GGA <b>TGC</b> CAA <i>TGG</i> AGT <b>CGT</b> AAC <i>GTT</i> CCA <b>AGC</b> TGA <i>GAT</i> TCG <b>AAA</b> TTG <i>CCC</i> GTA</span><span>ATG <b>CCG</b> TTA <i>GGC</i> ACT <b>TAA</b> GCT <i>ATC</i> GGA <b>TGC</b> CAA <i>TGG</i> AGT <b>CGT</b> AAC <i>GTT</i> CCA <b>AGC</b> TGA <i>GAT</i> TCG <b>AAA</b> TTG <i>CCC</i> GTA</span><span>ATG <b>CCG</b> TTA <i>GGC</i> ACT <b>TAA</b> GCT <i>ATC</i> GGA <b>TGC</b> CAA <i>TGG</i> AGT <b>CGT</b> AAC <i>GTT</i> CCA <b>AGC</b> TGA <i>GAT</i> TCG <b>AAA</b> TTG <i>CCC</i> GTA</span></div>
+  </div>
+
   <section id="publications" class="section pub-section">
     <div class="container">
       <div class="section-header">
-        <span class="sec-num">03</span>
+        <span class="sec-num">03 · Selected Work</span>
         <h2 class="sec-title">Selected <em>Publications</em></h2>
         <p class="sec-sub">Cumulative Impact Factor: 46.008 · First Author Papers: 05</p>
       </div>
@@ -276,51 +308,56 @@
     </div>
   </section>
 
-  
   <section id="tools" class="section tools-section">
     <div class="container">
       <div class="section-header">
-        <span class="sec-num">04</span>
+        <span class="sec-num">04 · Webservers</span>
         <h2 class="sec-title">Developed <em>Tools</em></h2>
         <p class="sec-sub">Open-access bioinformatics webservers and prediction tools</p>
       </div>
       <div class="tools-grid">
         <a href="http://proteininformatics.org/mkumar/bacarscan/" target="_blank" class="tcard">
+          <div class="tcard-dots"><i></i><i></i><i></i></div>
           <div class="tcard-top">
             <span class="tcard-icon">🔍</span>
             <span class="tcard-type">Webserver · Database</span>
           </div>
           <h3>BacARscan</h3>
           <p>In-silico resource to discern diversity in antibiotic resistance genes across metagenomic and genomic datasets.</p>
-          <span class="tcard-link">Visit Tool →</span>
+          <span class="tcard-link">visit tool --live</span>
         </a>
         <a href="http://www.proteininformatics.org/mkumar/baceffluxpred/" target="_blank" class="tcard">
+          <div class="tcard-dots"><i></i><i></i><i></i></div>
           <div class="tcard-top">
             <span class="tcard-icon">🧬</span>
             <span class="tcard-type">ML Predictor · Two-tier</span>
           </div>
           <h3>BacEffluxPred</h3>
           <p>Two-tier prediction system for bacterial efflux-conferring antibiotic resistance proteins and their subfamilies.</p>
-          <span class="tcard-link">Visit Tool →</span>
+          <span class="tcard-link">visit tool --live</span>
         </a>
         <a href="http://proteininformatics.org/mkumar/blacfampred/" target="_blank" class="tcard">
+          <div class="tcard-dots"><i></i><i></i><i></i></div>
           <div class="tcard-top">
             <span class="tcard-icon">🧪</span>
             <span class="tcard-type">HMM · Classifier</span>
           </div>
           <h3>β-LacFamPred</h3>
           <p>HMM-based prediction and annotation tool for β-lactamase families — classifies class, subclass, and family.</p>
-          <span class="tcard-link">Visit Tool →</span>
+          <span class="tcard-link">visit tool --live</span>
         </a>
       </div>
     </div>
   </section>
 
-  
+  <div class="dna-strip" aria-hidden="true">
+    <div class="dna-track"><span>ATG <b>CCG</b> TTA <i>GGC</i> ACT <b>TAA</b> GCT <i>ATC</i> GGA <b>TGC</b> CAA <i>TGG</i> AGT <b>CGT</b> AAC <i>GTT</i> CCA <b>AGC</b> TGA <i>GAT</i> TCG <b>AAA</b> TTG <i>CCC</i> GTA</span><span>ATG <b>CCG</b> TTA <i>GGC</i> ACT <b>TAA</b> GCT <i>ATC</i> GGA <b>TGC</b> CAA <i>TGG</i> AGT <b>CGT</b> AAC <i>GTT</i> CCA <b>AGC</b> TGA <i>GAT</i> TCG <b>AAA</b> TTG <i>CCC</i> GTA</span><span>ATG <b>CCG</b> TTA <i>GGC</i> ACT <b>TAA</b> GCT <i>ATC</i> GGA <b>TGC</b> CAA <i>TGG</i> AGT <b>CGT</b> AAC <i>GTT</i> CCA <b>AGC</b> TGA <i>GAT</i> TCG <b>AAA</b> TTG <i>CCC</i> GTA</span><span>ATG <b>CCG</b> TTA <i>GGC</i> ACT <b>TAA</b> GCT <i>ATC</i> GGA <b>TGC</b> CAA <i>TGG</i> AGT <b>CGT</b> AAC <i>GTT</i> CCA <b>AGC</b> TGA <i>GAT</i> TCG <b>AAA</b> TTG <i>CCC</i> GTA</span><span>ATG <b>CCG</b> TTA <i>GGC</i> ACT <b>TAA</b> GCT <i>ATC</i> GGA <b>TGC</b> CAA <i>TGG</i> AGT <b>CGT</b> AAC <i>GTT</i> CCA <b>AGC</b> TGA <i>GAT</i> TCG <b>AAA</b> TTG <i>CCC</i> GTA</span><span>ATG <b>CCG</b> TTA <i>GGC</i> ACT <b>TAA</b> GCT <i>ATC</i> GGA <b>TGC</b> CAA <i>TGG</i> AGT <b>CGT</b> AAC <i>GTT</i> CCA <b>AGC</b> TGA <i>GAT</i> TCG <b>AAA</b> TTG <i>CCC</i> GTA</span></div>
+  </div>
+
   <section id="contact" class="section contact-section">
     <div class="container">
       <div class="section-header">
-        <span class="sec-num">05</span>
+        <span class="sec-num">05 · Connect</span>
         <h2 class="sec-title">Get In <em>Touch</em></h2>
         <p class="sec-sub">Connect, collaborate, and explore my work across platforms</p>
       </div>
