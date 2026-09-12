@@ -3,6 +3,8 @@
   const btn = document.getElementById('themeToggle');
   let stored = null;
   try { stored = localStorage.getItem('dp-theme'); } catch (e) {}
+  // Light is the default look for the site; only switch to dark if the
+  // visitor has explicitly toggled it before (saved in localStorage).
   root.dataset.theme = stored || 'light';
   if (btn) {
     btn.addEventListener('click', () => {
@@ -12,39 +14,41 @@
     });
   }
 })();
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 60);
-}, { passive: true });
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-const mobileClose = document.getElementById('mobileClose');
+const sidenav = document.getElementById('sidenav');
+const navToggle = document.getElementById('navToggle');
+const navClose = document.getElementById('navClose');
 
-if (hamburger && mobileMenu) {
-  hamburger.addEventListener('click', () => {
-    mobileMenu.classList.add('open');
+if (navToggle && sidenav) {
+  navToggle.addEventListener('click', () => {
+    sidenav.classList.add('open');
     document.body.style.overflow = 'hidden';
   });
 }
 
 function closeMobile() {
-  if (!mobileMenu) return;
-  mobileMenu.classList.remove('open');
+  if (!sidenav) return;
+  sidenav.classList.remove('open');
   document.body.style.overflow = '';
 }
-if (mobileClose) mobileClose.addEventListener('click', closeMobile);
+if (navClose) navClose.addEventListener('click', closeMobile);
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href*="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const href = this.getAttribute('href');
-    if (href === '#') return;
-    const target = document.querySelector(href);
+    const hashIdx = href.indexOf('#');
+    if (hashIdx === -1) return;
+    const hash = href.slice(hashIdx);
+    const pagePart = href.slice(0, hashIdx);
+    const here = location.pathname.split('/').pop() || 'index.html';
+    const samePage = pagePart === '' || pagePart === here;
+    if (hash === '#') { closeMobile(); return; }
+    const target = samePage ? document.querySelector(hash) : null;
     if (target) {
       e.preventDefault();
-      const top = target.getBoundingClientRect().top + window.scrollY - 80;
+      const top = target.getBoundingClientRect().top + window.scrollY - 20;
       window.scrollTo({ top, behavior: 'smooth' });
-      closeMobile();
     }
+    closeMobile();
   });
 });
 
@@ -189,5 +193,24 @@ if (revealEls.length) {
       visible = entries[0].isIntersecting;
       visible ? start() : stop();
     }, { threshold: 0.02 }).observe(canvas);
+  });
+})();
+// Web Services directory — live filter
+(function () {
+  const input = document.getElementById('wsFilter');
+  const table = document.getElementById('wsTable');
+  const empty = document.getElementById('wsEmpty');
+  if (!input || !table) return;
+  const rows = Array.from(table.querySelectorAll('tbody tr'));
+
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    let visibleCount = 0;
+    rows.forEach(row => {
+      const match = row.textContent.toLowerCase().includes(q);
+      row.style.display = match ? '' : 'none';
+      if (match) visibleCount++;
+    });
+    if (empty) empty.hidden = visibleCount !== 0;
   });
 })();

@@ -11,45 +11,34 @@
 <base target="_blank">
 </head>
 <body>
+  <button class="navToggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
 
-  <nav id="navbar">
-    <div class="nav-logo"><a href="index.html">DP</a></div>
-    <div class="nav-right">
-      <ul class="nav-links">
+  <aside class="sidenav" id="sidenav">
+    <button class="navClose" id="navClose" aria-label="Close menu">✕</button>
+    <div class="sidenav-brand">
+      <a href="index.html">Dr. Deeksha <em>Pandey</em></a>
+      <span>Computational Biology &amp; Bioinformatics<br/>JIIT Noida</span>
+    </div>
+    <ul class="nav-links">
         <li><a href="index.html#home">Home</a></li>
-        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#tools">Web-Services</a></li>
         <li><a href="index.html#research">Research</a></li>
         <li><a href="index.html#publications">Publications</a></li>
-        <li><a href="index.html#tools">Tools</a></li>
+        <li><a href="students.html" class="active">Group Members</a></li>
+        <li><a href="positions.html">Positions</a></li>
+        <li><a href="awards.html">Awards</a></li>
         <li><a href="index.html#contact">Contact</a></li>
-        <li><a href="positions.html" class="">Positions</a></li>
-        <li><a href="awards.html" class="">Awards</a></li>
-        <li><a href="students.html" class="active">Students</a></li>
-      </ul>
+    </ul>
+    <div class="sidenav-foot">
+      <a href="CV_Deeksha_Pandey.pdf" target="_blank">Download CV</a>
       <button id="themeToggle" aria-label="Toggle dark / light mode">
         <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
       </button>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-  </nav>
+  </aside>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
-    <ul>
-      <li><a href="index.html#home" onclick="closeMobile()">Home</a></li>
-      <li><a href="index.html#about" onclick="closeMobile()">About</a></li>
-      <li><a href="index.html#research" onclick="closeMobile()">Research</a></li>
-      <li><a href="index.html#publications" onclick="closeMobile()">Publications</a></li>
-      <li><a href="index.html#tools" onclick="closeMobile()">Tools</a></li>
-      <li><a href="index.html#contact" onclick="closeMobile()">Contact</a></li>
-      <li><a href="positions.html" onclick="closeMobile()">Positions</a></li>
-      <li><a href="awards.html" onclick="closeMobile()">Awards</a></li>
-      <li><a href="students.html" onclick="closeMobile()">Students</a></li>
-    </ul>
-  </div>
+  <div class="page-wrap">
 
   <div class="page-hero">
     <div class="page-hero-bg">
@@ -69,10 +58,17 @@
     <div class="page-block">
       <div class="block-title">PhD Students</div>
       <div class="students-grid">
-        <div class="empty-state">
-          <div class="es-icon">🎓</div>
-          <p>Positions Opening Soon</p>
-          <small>PhD opportunities in computational biology &amp; AMR research</small>
+        <div class="student-card">
+          <div class="student-avatar">S</div>
+          <h3>Malika Kapooor</h3>
+          <p class="student-topic">[Research topic — e.g. Machine learning approaches for antimicrobial resistance gene prediction]</p>
+          <span class="student-year">PhD · Ongoing</span>
+        </div>
+        <div class="student-card">
+          <div class="student-avatar">S</div>
+          <h3>Jyoti Gupta</h3>
+          <p class="student-topic">[Research topic — e.g. Computational modelling of bacterial efflux systems]</p>
+          <span class="student-year">PhD · Ongoing</span>
         </div>
       </div>
     </div>
@@ -128,6 +124,8 @@
       </div>
     </div>
   </footer>
+
+    </div>
 
   <script src="script.js"></script>
 </body>

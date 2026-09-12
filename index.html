@@ -12,45 +12,34 @@
 <base target="_blank">
 </head>
 <body>
+  <button class="navToggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
 
-  <nav id="navbar">
-    <div class="nav-logo"><a href="index.html">DP</a></div>
-    <div class="nav-right">
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#tools">Tools</a></li>
-        <li><a href="#contact">Contact</a></li>
+  <aside class="sidenav" id="sidenav">
+    <button class="navClose" id="navClose" aria-label="Close menu">✕</button>
+    <div class="sidenav-brand">
+      <a href="index.html">Dr. Deeksha <em>Pandey</em></a>
+      <span>Computational Biology &amp; Bioinformatics<br/>JIIT Noida</span>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html#home" class="active">Home</a></li>
+        <li><a href="index.html#tools">Web-Services</a></li>
+        <li><a href="index.html#research">Research</a></li>
+        <li><a href="index.html#publications">Publications</a></li>
+        <li><a href="students.html">Group Members</a></li>
         <li><a href="positions.html">Positions</a></li>
         <li><a href="awards.html">Awards</a></li>
-        <li><a href="students.html">Students</a></li>
-      </ul>
+        <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="sidenav-foot">
+      <a href="CV_Deeksha_Pandey.pdf" target="_blank">Download CV</a>
       <button id="themeToggle" aria-label="Toggle dark / light mode">
         <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
       </button>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
-  </nav>
+  </aside>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
-    <ul>
-      <li><a href="#home" onclick="closeMobile()">Home</a></li>
-      <li><a href="#about" onclick="closeMobile()">About</a></li>
-      <li><a href="#research" onclick="closeMobile()">Research</a></li>
-      <li><a href="#publications" onclick="closeMobile()">Publications</a></li>
-      <li><a href="#tools" onclick="closeMobile()">Tools</a></li>
-      <li><a href="#contact" onclick="closeMobile()">Contact</a></li>
-      <li><a href="positions.html" onclick="closeMobile()">Positions</a></li>
-      <li><a href="awards.html" onclick="closeMobile()">Awards</a></li>
-      <li><a href="students.html" onclick="closeMobile()">Students</a></li>
-    </ul>
-  </div>
+  <div class="page-wrap">
 
   <section id="home" class="hero">
     <div class="hero-bg">
@@ -347,6 +336,42 @@
           <span class="tcard-link">visit tool --live</span>
         </a>
       </div>
+
+      <div class="webservices-wrap">
+        <div class="ws-head">
+          <h3>Web Services Directory</h3>
+          <input type="text" id="wsFilter" class="ws-filter" placeholder="Filter by name, category…" autocomplete="off" />
+        </div>
+        <div class="ws-table-scroll">
+          <table class="ws-table" id="wsTable">
+            <thead>
+              <tr><th>Name</th><th>Description</th><th>Category</th><th></th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ws-name">BacARscan</td>
+                <td>In-silico resource to discern diversity in antibiotic resistance genes across metagenomic and genomic datasets.</td>
+                <td><span class="ws-tag">Database</span></td>
+                <td><a href="http://proteininformatics.org/mkumar/bacarscan/" target="_blank">Launch →</a></td>
+              </tr>
+              <tr>
+                <td class="ws-name">BacEffluxPred</td>
+                <td>Two-tier prediction system for bacterial efflux-conferring antibiotic resistance proteins and their subfamilies.</td>
+                <td><span class="ws-tag">ML Predictor</span></td>
+                <td><a href="http://www.proteininformatics.org/mkumar/baceffluxpred/" target="_blank">Launch →</a></td>
+              </tr>
+              <tr>
+                <td class="ws-name">β-LacFamPred</td>
+                <td>HMM-based prediction and annotation tool for β-lactamase families — classifies class, subclass, and family.</td>
+                <td><span class="ws-tag">Classifier</span></td>
+                <td><a href="http://proteininformatics.org/mkumar/blacfampred/" target="_blank">Launch →</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="ws-empty" id="wsEmpty" hidden>No matching services found.</p>
+        </div>
+        <p class="ws-note">More webservers and databases are added as they are developed and published.</p>
+      </div>
     </div>
   </section>
 
@@ -437,6 +462,8 @@
       </div>
     </div>
   </footer>
+
+    </div>
 
   <script src="script.js"></script>
 </body>
