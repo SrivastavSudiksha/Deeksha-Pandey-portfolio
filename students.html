@@ -1,126 +1,100 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-  <meta name="theme-color" content="#1e3a8a"/>
-  <meta name="color-scheme" content="light dark"/>
-  <script>try{var t=localStorage.getItem('dp-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
-  <title>Students | Dr. Deeksha Pandey</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Group Members | Dr. Deeksha Pandey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <button class="navToggle" id="navToggle" aria-label="Open menu" aria-controls="sidenav" aria-expanded="false"><span></span><span></span><span></span></button>
+  <button class="navToggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
 
   <aside class="sidenav" id="sidenav">
-    <button type="button" id="sidebarCollapse" aria-label="Collapse sidebar" title="Collapse sidebar">☰</button>
     <button class="navClose" id="navClose" aria-label="Close menu">✕</button>
     <div class="sidenav-brand">
       <a href="index.html">Dr. Deeksha Pandey</a>
-      <span>Computational Biology &amp; Bioinformatics<br/>JIIT Noida</span>
+      <span>Computational Biology &amp; Bioinformatics<br>JIIT Noida</span>
     </div>
     <ul class="nav-links">
-        <li><a href="index.html#home" data-short="H">Home</a></li>
-        <li><a href="index.html#about" data-short="Ab">About</a></li>
-        <li><a href="index.html#research" data-short="R">Research</a></li>
-        <li><a href="index.html#publications" data-short="P">Publications</a></li>
-        <li><a href="index.html#tools" data-short="WS">Web-Services</a></li>
-        <li><a href="students.html" class="active" data-short="GM">Group Members</a></li>
-        <li><a href="positions.html" data-short="Pos">Positions</a></li>
-        <li><a href="awards.html" data-short="A">Awards</a></li>
-        <li><a href="index.html#contact" data-short="C">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#research">Research</a></li>
+      <li><a href="index.html#publications">Publications</a></li>
+      <li><a href="index.html#tools">Web-Services</a></li>
+      <li><a href="students.html" class="active">Group Members</a></li>
+      <li><a href="positions.html">Positions</a></li>
+      <li><a href="awards.html">Awards</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
     </ul>
     <div class="sidenav-foot">
-      <a href="CV_Deeksha_Pandey.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
-      <button id="themeToggle" aria-label="Toggle dark / light mode">
-        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-      </button>
+      <a href="CV.pdf" target="_blank" rel="noopener">Download CV</a>
     </div>
   </aside>
 
   <div class="page-wrap">
-
-  <div class="page-hero">
-<div class="page-hero-inner">
-      <span class="sec-num">Mentorship</span>
-      <h1>My Students</h1>
-      <p>Current and past students I have had the privilege of mentoring in computational biology and bioinformatics.</p>
+    <div class="page-hero">
+      <div class="container">
+        <h1>My Students</h1>
+        <p>Current and past students I have had the privilege of mentoring in computational biology and bioinformatics.</p>
+      </div>
     </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="student-group">
+          <h3>PhD Students</h3>
+          <div class="student-cards">
+            <div class="student-card">
+              <h4>Malika Kapoor</h4>
+              <p class="status">PhD · Ongoing</p>
+            </div>
+            <div class="student-card">
+              <h4>Jyoti Gupta</h4>
+              <p class="status">PhD · Ongoing</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="student-group">
+          <h3>M.Tech / M.Sc Students</h3>
+          <div class="placeholder-card">
+            To Be Updated<br>
+            <span style="font-size:0.8rem">Master's students in bioinformatics and computational biology</span>
+          </div>
+        </div>
+
+        <div class="student-group">
+          <h3>B.Tech / Project Students</h3>
+          <div class="placeholder-card">
+            To Be Updated<br>
+            <span style="font-size:0.8rem">Undergraduate project students</span>
+          </div>
+        </div>
+
+        <div class="cta-box">
+          <h3>Interested in Joining the Lab?</h3>
+          <p>We welcome motivated students with interest in antimicrobial resistance, machine learning, metagenomics, and computational biology. Reach out to discuss potential opportunities.</p>
+          <a href="mailto:pandeydeeksha14@gmail.com" class="btn btn-primary">Get in Touch →</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Dr. Deeksha Pandey. All rights reserved.</p>
+      </div>
+    </footer>
   </div>
 
-  <div class="page-content">
-
-    <div class="page-block">
-      <h2 class="block-title">PhD Students</h2>
-      <div class="students-grid">
-        <div class="student-card">
-          <div class="student-avatar">M</div>
-          <h3>Malika Kapooor</h3>
-          <span class="student-year">PhD · Ongoing</span>
-        </div>
-        <div class="student-card">
-          <div class="student-avatar">J</div>
-          <h3>Jyoti Gupta</h3>
-          <span class="student-year">PhD · Ongoing</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="page-block">
-      <h2 class="block-title">M.Tech / M.Sc Students</h2>
-      <div class="students-grid">
-        <div class="empty-state">
-          <div class="es-icon">📚</div>
-          <p>To Be Updated</p>
-          <small>Master's students in bioinformatics and computational biology</small>
-        </div>
-      </div>
-    </div>
-
-    <div class="page-block">
-      <h2 class="block-title">B.Tech / Project Students</h2>
-      <div class="students-grid">
-        <div class="empty-state">
-          <div class="es-icon">🔬</div>
-          <p>To Be Updated</p>
-          <small>Undergraduate project students</small>
-        </div>
-      </div>
-    </div>
-
-    <div class="join-banner">
-      <div>
-        <h3>Interested in Joining the Lab?</h3>
-        <p>We welcome motivated students with interest in antimicrobial resistance, machine learning, metagenomics, and computational biology. Reach out to discuss potential opportunities.</p>
-      </div>
-      <a href="mailto:pandeydeeksha14@gmail.com" class="join-btn">Get in Touch →</a>
-    </div>
-
-  </div>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-left">
-        <div class="footer-logo">Dr. Deeksha Pandey</div>
-        <p>Computational Biology · Antimicrobial Resistance · Machine Learning</p>
-      </div>
-      <div class="footer-right">
-        <div class="footer-links">
-          <a href="https://www.researchgate.net/profile/Deeksha_Pandey4" target="_blank" rel="noopener noreferrer">ResearchGate</a>
-          <a href="https://scholar.google.co.in/citations?hl=en&user=V13V4i8AAAAJ" target="_blank" rel="noopener noreferrer">Scholar</a>
-          <a href="https://www.linkedin.com/in/deeksha-pandey-b1a76788/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://orcid.org/0000-0002-7847-9870" target="_blank" rel="noopener noreferrer">ORCID</a>
-          <a href="CV_Deeksha_Pandey.pdf" target="_blank" rel="noopener noreferrer">CV</a>
-        </div>
-        <p class="footer-copy">© 2026 Dr. Deeksha Pandey · Assistant Professor (Grade-I) · JIIT Noida</p>
-        <p class="footer-created">Designed &amp; developed by <strong>Sudiksha Srivastav</strong> · <a href="mailto:sudiksha241206@gmail.com">sudiksha241206@gmail.com</a></p>
-      </div>
-    </div>
-  </footer>
-
-    </div>
-
-  <script src="script.js" defer></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const sidenav = document.getElementById('sidenav');
+    document.getElementById('navToggle').addEventListener('click', () => sidenav.classList.add('open'));
+    document.getElementById('navClose').addEventListener('click', () => sidenav.classList.remove('open'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => sidenav.classList.remove('open')));
+  </script>
 </body>
 </html>
