@@ -18,16 +18,26 @@ const sidenav = document.getElementById('sidenav');
 const navToggle = document.getElementById('navToggle');
 const navClose = document.getElementById('navClose');
 
+const backdrop = document.createElement('div');
+backdrop.className = 'nav-backdrop';
+document.body.appendChild(backdrop);
 if (navToggle && sidenav) {
   navToggle.addEventListener('click', () => {
     sidenav.classList.add('open');
+    backdrop.classList.add('show');
+    navToggle.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
   });
 }
+backdrop.addEventListener('click', () => closeMobile());
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobile(); });
+window.matchMedia('(min-width: 881px)').addEventListener('change', () => closeMobile());
 
 function closeMobile() {
   if (!sidenav) return;
   sidenav.classList.remove('open');
+  backdrop.classList.remove('show');
+  if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
   document.body.style.overflow = '';
 }
 if (navClose) navClose.addEventListener('click', closeMobile);
@@ -53,14 +63,15 @@ document.querySelectorAll('a[href*="#"]').forEach(anchor => {
 });
 
 const sections = document.querySelectorAll('section[id]');
+const isIndex = /(^|\/)(index\.html)?$/.test(location.pathname);
 const navLinks = document.querySelectorAll('.nav-links a');
-if (sections.length && navLinks.length) {
+if (isIndex && sections.length && navLinks.length) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         navLinks.forEach(link => {
           link.classList.remove('active');
-          if (link.getAttribute('href') === '#' + entry.target.id) link.classList.add('active');
+          if ((link.getAttribute('href').split('#')[1] || '') === entry.target.id) link.classList.add('active');
         });
       }
     });
@@ -82,6 +93,7 @@ const statNums = document.querySelectorAll('.hstat-n');
 let counted = false;
 const hero = document.querySelector('.hero');
 if (hero && statNums.length) {
+  statNums.forEach(el => { el.textContent = '0'; });
   const heroObs = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting && !counted) {
       counted = true;
@@ -91,28 +103,8 @@ if (hero && statNums.length) {
   heroObs.observe(hero);
 }
 
-const revealEls = document.querySelectorAll(
-  '.pub-item, .tcard, .cinfo-item, .slink, .edu-item, .rcard, .affil-card, ' +
-  '.award-row, .pos-item, .mem-item, .skill-chip, .student-card, .conf-item, ' +
-  '.feature-award, .join-banner, .research-visual'
-);
-if (revealEls.length) {
-  const revealObs = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        entry.target.style.transition = `opacity .55s ease ${i * 45}ms, transform .55s cubic-bezier(.22,1,.36,1) ${i * 45}ms`;
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        revealObs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.06 });
-  revealEls.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(18px)';
-    revealObs.observe(el);
-  });
-}
+// Reveal animations disabled for formal static academic look
+
 (function () {
   const canvases = document.querySelectorAll('.network-canvas');
   if (!canvases.length) return;
@@ -120,7 +112,7 @@ if (revealEls.length) {
   const LINK_DIST = 130;
 
   function rgb() {
-    return document.documentElement.dataset.theme === 'light' ? '10,157,134' : '0,229,199';
+    return document.documentElement.dataset.theme === 'light' ? '29,78,216' : '59,130,246';
   }
 
   canvases.forEach(canvas => {
@@ -212,5 +204,28 @@ if (revealEls.length) {
       if (match) visibleCount++;
     });
     if (empty) empty.hidden = visibleCount !== 0;
+  });
+})();
+
+// Collapsible sidebar
+(function () {
+  const sidenav = document.getElementById('sidenav');
+  const pageWrap = document.querySelector('.page-wrap');
+  const btn = document.getElementById('sidebarCollapse');
+  if (!sidenav || !btn) return;
+
+  let collapsed = false;
+  try { collapsed = localStorage.getItem('dp-sidebar') === 'collapsed'; } catch (e) {}
+  if (collapsed) {
+    sidenav.classList.add('collapsed');
+    if (pageWrap) pageWrap.classList.add('sidebar-collapsed');
+    btn.textContent = '»';
+  }
+
+  btn.addEventListener('click', () => {
+    const isCollapsed = sidenav.classList.toggle('collapsed');
+    if (pageWrap) pageWrap.classList.toggle('sidebar-collapsed', isCollapsed);
+    btn.textContent = isCollapsed ? '»' : '☰';
+    try { localStorage.setItem('dp-sidebar', isCollapsed ? 'collapsed' : 'open'); } catch (e) {}
   });
 })();

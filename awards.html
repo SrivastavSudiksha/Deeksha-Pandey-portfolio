@@ -2,35 +2,36 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <meta name="theme-color" content="#1e3a8a"/>
+  <meta name="color-scheme" content="light dark"/>
+  <script>try{var t=localStorage.getItem('dp-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
   <title>Awards | Dr. Deeksha Pandey</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<base target="_blank">
 </head>
 <body>
-  <button class="navToggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <button class="navToggle" id="navToggle" aria-label="Open menu" aria-controls="sidenav" aria-expanded="false"><span></span><span></span><span></span></button>
 
   <aside class="sidenav" id="sidenav">
+    <button type="button" id="sidebarCollapse" aria-label="Collapse sidebar" title="Collapse sidebar">☰</button>
     <button class="navClose" id="navClose" aria-label="Close menu">✕</button>
     <div class="sidenav-brand">
-      <a href="index.html">Dr. Deeksha <em>Pandey</em></a>
+      <a href="index.html">Dr. Deeksha Pandey</a>
       <span>Computational Biology &amp; Bioinformatics<br/>JIIT Noida</span>
     </div>
     <ul class="nav-links">
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="index.html#tools">Web-Services</a></li>
-        <li><a href="index.html#research">Research</a></li>
-        <li><a href="index.html#publications">Publications</a></li>
-        <li><a href="students.html">Group Members</a></li>
-        <li><a href="positions.html">Positions</a></li>
-        <li><a href="awards.html" class="active">Awards</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="index.html#home" data-short="H">Home</a></li>
+        <li><a href="index.html#about" data-short="Ab">About</a></li>
+        <li><a href="index.html#research" data-short="R">Research</a></li>
+        <li><a href="index.html#publications" data-short="P">Publications</a></li>
+        <li><a href="index.html#tools" data-short="WS">Web-Services</a></li>
+        <li><a href="students.html" data-short="GM">Group Members</a></li>
+        <li><a href="positions.html" data-short="Pos">Positions</a></li>
+        <li><a href="awards.html" class="active" data-short="A">Awards</a></li>
+        <li><a href="index.html#contact" data-short="C">Contact</a></li>
     </ul>
     <div class="sidenav-foot">
-      <a href="CV_Deeksha_Pandey.pdf" target="_blank">Download CV</a>
+      <a href="CV_Deeksha_Pandey.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
       <button id="themeToggle" aria-label="Toggle dark / light mode">
         <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
@@ -41,14 +42,9 @@
   <div class="page-wrap">
 
   <div class="page-hero">
-    <div class="page-hero-bg">
-      <img src="backgroung.png" alt="" />
-      <div class="page-hero-bg-overlay"></div>
-    </div>
-    <canvas class="network-canvas" aria-hidden="true"></canvas>
-    <div class="page-hero-inner">
+<div class="page-hero-inner">
       <span class="sec-num">Awards &amp; Recognition</span>
-      <h1>Honors &amp; <em>Achievements</em></h1>
+      <h1>Honors &amp; Achievements</h1>
       <p>National and international recognition for research contributions, fellowships, and science communication.</p>
     </div>
   </div>
@@ -56,38 +52,38 @@
   <div class="page-content">
 
     <div class="page-block">
-      <div class="block-title">Featured Award</div>
+      <h2 class="block-title">Featured Award</h2>
       <div class="feature-award">
         <div class="feature-award-text">
           <span class="af-tag">2022 · National Award · DST Govt. of India</span>
           <h3>AWSAR Award — 3rd Prize</h3>
           <p>Received the <strong>3rd Prize</strong> in the Augmenting Writing Skills for Articulating Research (AWSAR) National Award conducted by the Department of Science &amp; Technology (DST), Govt. of India, under the Ph.D. category.</p>
-          <p>Story Title: <em>"Computers and artificial intelligence as weapons against antimicrobial resistance"</em></p>
+          <p>Story Title: "Computers and artificial intelligence as weapons against antimicrobial resistance"</p>
           <p>This award recognizes outstanding science communication by early-career researchers, bridging the gap between scientific discoveries and public understanding.</p>
         </div>
         <div class="feature-award-img">
-          <img src="profile.jpeg" alt="Dr. Deeksha Pandey receiving AWSAR Award" />
-          <p class="img-cap">Dr. Deeksha Pandey · AWSAR National Award Ceremony · 2022</p>
+          <img src="profile.jpeg" alt="Dr. Deeksha Pandey" loading="lazy" />
+          <p class="img-cap">Dr. Deeksha Pandey</p>
         </div>
       </div>
     </div>
 
     <div class="page-block">
-      <div class="block-title">Honors &amp; Fellowships</div>
+      <h2 class="block-title">Honors &amp; Fellowships</h2>
       <div class="awards-list">
         <div class="award-row">
           <div class="ar-year">2025</div>
           <div class="ar-icon">🏅</div>
           <div>
-            <h4>Abstract Selected — ASM Microbiome 2025</h4>
-            <p>American Society for Microbiology, Los Angeles, June 19–23. Poster: <em>A deep learning-based tool for the prediction of P-Glycoprotein inhibitors and substrates.</em></p>
+            <h3>Abstract Selected — ASM Microbiome 2025</h3>
+            <p>American Society for Microbiology, Los Angeles, June 19–23. Poster: A deep learning-based tool for the prediction of P-Glycoprotein inhibitors and substrates.</p>
           </div>
         </div>
         <div class="award-row">
           <div class="ar-year">2022</div>
           <div class="ar-icon">🏆</div>
           <div>
-            <h4>AWSAR National Award — 3rd Prize</h4>
+            <h3>AWSAR National Award — 3rd Prize</h3>
             <p>DST, Govt. of India · Ph.D. category · Science communication for antimicrobial resistance research.</p>
           </div>
         </div>
@@ -95,7 +91,7 @@
           <div class="ar-year">2022</div>
           <div class="ar-icon">🌍</div>
           <div>
-            <h4>ECCMID Outreach Grant — Bill &amp; Melinda Gates Foundation</h4>
+            <h3>ECCMID Outreach Grant — Bill &amp; Melinda Gates Foundation</h3>
             <p>Selected for 32nd ECCMID outreach grant for onsite participation, Lisbon, Portugal, April 23–26, 2022.</p>
           </div>
         </div>
@@ -103,7 +99,7 @@
           <div class="ar-year">2022</div>
           <div class="ar-icon">📋</div>
           <div>
-            <h4>Abstract Selected — ASM Microbiome 2022</h4>
+            <h3>Abstract Selected — ASM Microbiome 2022</h3>
             <p>American Society for Microbiology, Washington DC, June 9–13, 2022.</p>
           </div>
         </div>
@@ -111,7 +107,7 @@
           <div class="ar-year">2020</div>
           <div class="ar-icon">🤝</div>
           <div>
-            <h4>Volunteer Recognition — InCoB 2020</h4>
+            <h3>Volunteer Recognition — InCoB 2020</h3>
             <p>Selected for volunteer program in 19th International Conference on Bioinformatics for leadership and contribution to success of InCoB 2020.</p>
           </div>
         </div>
@@ -119,7 +115,7 @@
           <div class="ar-year">2019</div>
           <div class="ar-icon">✈️</div>
           <div>
-            <h4>International Travel Grant — Wellcome Genome Campus</h4>
+            <h3>International Travel Grant — Wellcome Genome Campus</h3>
             <p>Full financial support — "Antimicrobial Resistance in Bacterial Pathogens", Hanoi, Vietnam, Sept 29–Oct 4, 2019. Organized by WGCAC Cambridge.</p>
           </div>
         </div>
@@ -127,7 +123,7 @@
           <div class="ar-year">2018</div>
           <div class="ar-icon">🥇</div>
           <div>
-            <h4>Best Poster Award</h4>
+            <h3>Best Poster Award</h3>
             <p>National Symposium on Database Development &amp; Biocuration (NSDDB), University of Delhi South Campus, April 6–7, 2018.</p>
           </div>
         </div>
@@ -135,7 +131,7 @@
           <div class="ar-year">2018</div>
           <div class="ar-icon">🎖️</div>
           <div>
-            <h4>Senior Research Fellowship (INSPIRE)</h4>
+            <h3>Senior Research Fellowship (INSPIRE)</h3>
             <p>Department of Science &amp; Technology, Govt. of India.</p>
           </div>
         </div>
@@ -143,7 +139,7 @@
           <div class="ar-year">2016</div>
           <div class="ar-icon">🎖️</div>
           <div>
-            <h4>Junior Research Fellowship (INSPIRE)</h4>
+            <h3>Junior Research Fellowship (INSPIRE)</h3>
             <p>Department of Science &amp; Technology, Govt. of India.</p>
           </div>
         </div>
@@ -151,7 +147,7 @@
           <div class="ar-year">2015</div>
           <div class="ar-icon">🥇</div>
           <div>
-            <h4>Gold Medal — M.Tech Bioinformatics</h4>
+            <h3>Gold Medal — M.Tech Bioinformatics</h3>
             <p>Secured 1st position in M.Tech (Bioinformatics), Banasthali Vidyapeeth, Jaipur.</p>
           </div>
         </div>
@@ -159,7 +155,7 @@
           <div class="ar-year">2014–15</div>
           <div class="ar-icon">📚</div>
           <div>
-            <h4>DBT Scholarship — M.Tech Dissertation</h4>
+            <h3>DBT Scholarship — M.Tech Dissertation</h3>
             <p>DBT scholarship for M.Tech Dissertation from Bioinformatics Infrastructure Facility, Sri Venkateswara College.</p>
           </div>
         </div>
@@ -167,7 +163,7 @@
           <div class="ar-year">2015</div>
           <div class="ar-icon">🏭</div>
           <div>
-            <h4>Qualified BITP — Biotech Consortium India</h4>
+            <h3>Qualified BITP — Biotech Consortium India</h3>
             <p>Qualified Biotech Industrial Training Program (BITP) conducted by Biotech Consortium India Limited (BCIL).</p>
           </div>
         </div>
@@ -175,26 +171,26 @@
     </div>
 
     <div class="page-block">
-      <div class="block-title">International Conferences &amp; Workshops</div>
+      <h2 class="block-title">International Conferences &amp; Workshops</h2>
       <div class="conf-list">
         <div class="conf-item">
           <div class="conf-year">2023</div>
           <div class="conf-content">
-            <h4>Indo-US International Conference on Antimicrobial Resistance &amp; Human Microbiome (ARHM)</h4>
+            <h3>Indo-US International Conference on Antimicrobial Resistance &amp; Human Microbiome (ARHM)</h3>
             <p>November 15–18, 2023 · MK Bhan Auditorium, THSTI, New Delhi</p>
           </div>
         </div>
         <div class="conf-item">
           <div class="conf-year">2023</div>
           <div class="conf-content">
-            <h4>Global Bio India 2023</h4>
+            <h3>Global Bio India 2023</h3>
             <p>December 4–6, 2023 · Bharat Mandapam, Pragati Maidan, New Delhi</p>
           </div>
         </div>
         <div class="conf-item">
           <div class="conf-year">2022</div>
           <div class="conf-content">
-            <h4>32nd European Congress of Clinical Microbiology &amp; Infectious Diseases (ECCMID)</h4>
+            <h3>32nd European Congress of Clinical Microbiology &amp; Infectious Diseases (ECCMID)</h3>
             <p>April 23–26, 2022 · Lisbon, Portugal · Poster presentation with full financial support (Gates Foundation Grant)</p>
             <span class="conf-chip">International · Poster · Travel Grant</span>
           </div>
@@ -202,22 +198,22 @@
         <div class="conf-item">
           <div class="conf-year">2020</div>
           <div class="conf-content">
-            <h4>19th International Conference on Bioinformatics (InCoB 2020)</h4>
-            <p>November 25–29, 2020 · Virtual · Demo Talk: <em>BacEffluxPred: A two-tier system to predict and categorize bacterial efflux-mediated antibiotic resistance proteins</em></p>
+            <h3>19th International Conference on Bioinformatics (InCoB 2020)</h3>
+            <p>November 25–29, 2020 · Virtual · Demo Talk: BacEffluxPred: A two-tier system to predict and categorize bacterial efflux-mediated antibiotic resistance proteins</p>
             <span class="conf-chip">International · Talk</span>
           </div>
         </div>
         <div class="conf-item">
           <div class="conf-year">2020</div>
           <div class="conf-content">
-            <h4>International Conference on Drug Discovery</h4>
+            <h3>International Conference on Drug Discovery</h3>
             <p>February 29 – March 2, 2020 · BITS Hyderabad</p>
           </div>
         </div>
         <div class="conf-item">
           <div class="conf-year">2019</div>
           <div class="conf-content">
-            <h4>Antimicrobial Resistance in Bacterial Pathogens</h4>
+            <h3>Antimicrobial Resistance in Bacterial Pathogens</h3>
             <p>September 29 – October 4, 2019 · Hanoi, Vietnam · Wellcome Genome Campus (Full Financial Support)</p>
             <span class="conf-chip">International · Travel Grant</span>
           </div>
@@ -225,8 +221,8 @@
         <div class="conf-item">
           <div class="conf-year">2018</div>
           <div class="conf-content">
-            <h4>International Conference on Bioinformatics</h4>
-            <p>September 26–28, 2018 · Jawaharlal Nehru University, New Delhi · Poster: <em>Comparative analyses of antibiotic resistance in pathogenic microbes</em></p>
+            <h3>International Conference on Bioinformatics</h3>
+            <p>September 26–28, 2018 · Jawaharlal Nehru University, New Delhi · Poster: Comparative analyses of antibiotic resistance in pathogenic microbes</p>
             <span class="conf-chip">International · Poster</span>
           </div>
         </div>
@@ -234,28 +230,28 @@
     </div>
 
     <div class="page-block">
-      <div class="block-title">National Conferences &amp; Symposia</div>
+      <h2 class="block-title">National Conferences &amp; Symposia</h2>
       <div class="conf-list">
         <div class="conf-item">
           <div class="conf-year">2019</div>
           <div class="conf-content">
-            <h4>National Symposium on Database Development &amp; Biocuration</h4>
-            <p>December 17–18, 2019 · University of Delhi South Campus · Talk: <em>In-silico Prediction tools for investigation of AMR genes in various -omics dataset</em></p>
+            <h3>National Symposium on Database Development &amp; Biocuration</h3>
+            <p>December 17–18, 2019 · University of Delhi South Campus · Talk: In-silico Prediction tools for investigation of AMR genes in various -omics dataset</p>
             <span class="conf-chip">Talk</span>
           </div>
         </div>
         <div class="conf-item">
           <div class="conf-year">2019</div>
           <div class="conf-content">
-            <h4>DST INSPIRE Fellowship Review Meeting</h4>
-            <p>September 19–21, 2019 · Chandigarh University · Poster: <em>Comparative analyses of antibiotic resistance in pathogenic microbes</em></p>
+            <h3>DST INSPIRE Fellowship Review Meeting</h3>
+            <p>September 19–21, 2019 · Chandigarh University · Poster: Comparative analyses of antibiotic resistance in pathogenic microbes</p>
             <span class="conf-chip">Poster</span>
           </div>
         </div>
         <div class="conf-item">
           <div class="conf-year">2019</div>
           <div class="conf-content">
-            <h4>8th National Science Day Symposium</h4>
+            <h3>8th National Science Day Symposium</h3>
             <p>February 27–28, 2019 · University of Delhi South Campus</p>
             <span class="conf-chip">Organizer · Poster</span>
           </div>
@@ -263,7 +259,7 @@
         <div class="conf-item">
           <div class="conf-year">2018</div>
           <div class="conf-content">
-            <h4>National Symposium on Database Development &amp; Biocuration (NSDDB)</h4>
+            <h3>National Symposium on Database Development &amp; Biocuration (NSDDB)</h3>
             <p>April 6–7, 2018 · University of Delhi South Campus · <strong>Best Poster Award</strong></p>
             <span class="conf-chip">Best Poster Award</span>
           </div>
@@ -271,15 +267,15 @@
         <div class="conf-item">
           <div class="conf-year">2015</div>
           <div class="conf-content">
-            <h4>Symposium in Mathematical &amp; Computational Biology</h4>
+            <h3>Symposium in Mathematical &amp; Computational Biology</h3>
             <p>NNMCB, Delhi Node &amp; Sri Venkateswara College, University of Delhi</p>
           </div>
         </div>
         <div class="conf-item">
           <div class="conf-year">2013</div>
           <div class="conf-content">
-            <h4>15th Annual Conference of Society of Statistics, Computer and Application</h4>
-            <p>Banasthali Vidyapith, Rajasthan · Poster: <em>A review of a physiological model of heart as a specific case of arteries</em></p>
+            <h3>15th Annual Conference of Society of Statistics, Computer and Application</h3>
+            <p>Banasthali Vidyapith, Rajasthan · Poster: A review of a physiological model of heart as a specific case of arteries</p>
             <span class="conf-chip">Poster</span>
           </div>
         </div>
@@ -291,16 +287,16 @@
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-left">
-        <div class="footer-logo">Dr. Deeksha <em>Pandey</em></div>
+        <div class="footer-logo">Dr. Deeksha Pandey</div>
         <p>Computational Biology · Antimicrobial Resistance · Machine Learning</p>
       </div>
       <div class="footer-right">
         <div class="footer-links">
-          <a href="https://www.researchgate.net/profile/Deeksha_Pandey4" target="_blank">ResearchGate</a>
-          <a href="https://scholar.google.co.in/citations?hl=en&user=V13V4i8AAAAJ" target="_blank">Scholar</a>
-          <a href="https://www.linkedin.com/in/deeksha-pandey-b1a76788/" target="_blank">LinkedIn</a>
-          <a href="https://orcid.org/0000-0002-7847-9870" target="_blank">ORCID</a>
-          <a href="CV_Deeksha_Pandey.pdf" target="_blank">CV</a>
+          <a href="https://www.researchgate.net/profile/Deeksha_Pandey4" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+          <a href="https://scholar.google.co.in/citations?hl=en&user=V13V4i8AAAAJ" target="_blank" rel="noopener noreferrer">Scholar</a>
+          <a href="https://www.linkedin.com/in/deeksha-pandey-b1a76788/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://orcid.org/0000-0002-7847-9870" target="_blank" rel="noopener noreferrer">ORCID</a>
+          <a href="CV_Deeksha_Pandey.pdf" target="_blank" rel="noopener noreferrer">CV</a>
         </div>
         <p class="footer-copy">© 2026 Dr. Deeksha Pandey · Assistant Professor (Grade-I) · JIIT Noida</p>
         <p class="footer-created">Designed &amp; developed by <strong>Sudiksha Srivastav</strong> · <a href="mailto:sudiksha241206@gmail.com">sudiksha241206@gmail.com</a></p>
@@ -310,6 +306,6 @@
 
     </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
